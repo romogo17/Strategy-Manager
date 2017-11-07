@@ -198,7 +198,7 @@
             }
         }*/
 
-        public void solicitaEstrategias()
+        public void solicitaEstrategias(String conexion)
         {
             using (OracleConnection objConn = new OracleConnection(ConfigurationManager.AppSettings["connectionString"]))
             {
@@ -210,6 +210,7 @@
                 objCmd.CommandType = CommandType.StoredProcedure;
                 //Set parameters
                 OracleParameter retParam = objCmd.Parameters.Add("return_value", OracleDbType.RefCursor, ParameterDirection.ReturnValue);
+                objCmd.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, conexion, ParameterDirection.Input));
 
                 try
                 {

@@ -164,13 +164,16 @@
             ch.ShowDialog(this);
         }
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {   String baseBusqueda="";
+        {
+            String baseBusqueda="";
             String servidor = "";
+            String conexion = "";
             if (e.RowIndex>= 0) {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                 baseBusqueda = row.Cells["DATABASE_INSTANCE"].Value.ToString();
                 servidor = row.Cells["CONN_NAME"].Value.ToString();
-                ListaEstrategia lista = new ListaEstrategia(this, servidor, baseBusqueda);
+                conexion = row.Cells["CONN_ID"].Value.ToString();
+                ListaEstrategia lista = new ListaEstrategia(this, servidor, baseBusqueda, conexion);
                 System.Windows.Forms.MessageBox.Show(servidor + baseBusqueda);
                 lista.ShowDialog();
                

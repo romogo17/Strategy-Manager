@@ -135,5 +135,12 @@ CREATE OR REPLACE PROCEDURE insert_strategy(name in varchar2, connection in varc
   END;
 /
 
- --Funcion para conseguir las bases de datos
- 
+ --Funcion para conseguir las estrategias
+ create or replace function get_strategy(strategy in varchar2)
+    return SYS_REFCURSOR IS
+    cr SYS_REFCURSOR;
+   BEGIN
+    OPEN cr FOR SELECT * FROM STRATEGY WHERE connection = strategy;
+    RETURN cr;
+   END;
+   /

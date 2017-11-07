@@ -18,12 +18,12 @@ namespace Oracle_Tablespace_Monitor
 {
     public partial class ListaEstrategia : Form
     {
-        public ListaEstrategia(Application application,String ser, String bas)
+        public ListaEstrategia(Application application,String ser, String bas, String conexion)
         {
             InitializeComponent();
             this.Text = "Servidor: " + ser + "- Base de datos: " + bas;
             app = application;
-            solicitaEstrategias();
+            solicitaEstrategias(conexion);
         }
 
 
