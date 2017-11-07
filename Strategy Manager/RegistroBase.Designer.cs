@@ -215,28 +215,29 @@ namespace Oracle_Tablespace_Monitor
             {
                 OracleCommand objCmd = new OracleCommand();
                 objCmd.Connection = objConn;
-                objCmd.CommandText = "create database link Datalink_" + nombreServidor.Text + baseDatos.Text +
-                                     " connect to system identified by manager " +
-                                      "using" +
-                                      "'(DESCRIPTION=" +
-                                      "(ADDRESS =" +
-                                      "(PROTOCOL = TCP)" +
-                                      "(HOST =" + ip_base.Text + ")" +
-                                      "(PORT =" + puerto_base.Text + "))" +
-                                      "(CONNECT_DATA =" +
-                                      "(SERVER = DEDICATED)" +
-                                      "(SERVICE_NAME = XE)))'";
+                objCmd.CommandText = "create database link " + "C_"+ nombreServidor.Text + baseDatos.Text +"\n" +
+                                       "connect to SYSTEM identified by MANAGER \n" +
+                                        "using \n" +
+                                       "'(DESCRIPTION = \n" +
+                                        "(ADDRESS = (PROTOCOL = TCP)(HOST = " + ip_base.Text + ")(PORT =" + puerto_base.Text + ")) \n" +
+                                        "(CONNECT_DATA = \n" +
+                                        "(SERVER = DEDICATED) \n" +
+                                        "(SERVICE_NAME = XE) \n " +
+                                        ") \n" +
+                                        ")' \n ";
 
                 objCmd.CommandType = CommandType.Text;
                 OracleCommand objCmd2 = new OracleCommand();
                 objCmd2.Connection = objConn;
-                objCmd2.CommandText = "Insert into CONEXIONES VALUES (:1,:2,:3,:4,:5)";
-
-                objCmd2.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, baseDatos.Text, ParameterDirection.Input));
+                objCmd2.CommandText = "Insert into connection VALUES (:1,:2,:3,:4,:5,:6)";
+                String generaId = "C_" + nombreServidor.Text + baseDatos.Text;
+                objCmd2.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, generaId, ParameterDirection.Input));
                 objCmd2.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, nombreServidor.Text, ParameterDirection.Input));
-                objCmd2.Parameters.Add(new OracleParameter("3", OracleDbType.Varchar2, ip_base.Text, ParameterDirection.Input));
-                objCmd2.Parameters.Add(new OracleParameter("4", OracleDbType.Varchar2, puerto_base.Text, ParameterDirection.Input));
-                objCmd2.Parameters.Add(new OracleParameter("5", OracleDbType.Char, '1', ParameterDirection.Input));
+                objCmd2.Parameters.Add(new OracleParameter("3", OracleDbType.Varchar2, baseDatos.Text, ParameterDirection.Input));
+                objCmd2.Parameters.Add(new OracleParameter("4", OracleDbType.Varchar2, ip_base.Text, ParameterDirection.Input));
+                objCmd2.Parameters.Add(new OracleParameter("5", OracleDbType.Varchar2, puerto_base.Text, ParameterDirection.Input));
+                objCmd2.Parameters.Add(new OracleParameter("5", OracleDbType.Decimal,1, ParameterDirection.Input));
+
                 try
                 {
                     objConn.Open();

@@ -236,33 +236,33 @@ namespace Oracle_Tablespace_Monitor
             {
                 OracleCommand objCmd = new OracleCommand();
                 objCmd.Connection = objConn;
-                objCmd.CommandText = "drop database link Datalink_" + nombreServidor.Text + baseDatos.Text;
+                objCmd.CommandText = "drop database link C_" + nombreServidor.Text + baseDatos.Text;
                 OracleCommand objCmd3 = new OracleCommand();
                 objCmd3.Connection = objConn;
-                objCmd3.CommandText = "create database link Datalink_" + nombreServidor.Text + baseDatos.Text +
-                                     " connect to system identified by manager " +
-                                      "using" +
-                                      "'(DESCRIPTION=" +
-                                      "(ADDRESS =" +
-                                      "(PROTOCOL = TCP)" +
-                                      "(HOST =" + ip_base.Text + ")" +
-                                      "(PORT =" + puerto.Text + "))" +
-                                      "(CONNECT_DATA =" +
-                                      "(SERVER = DEDICATED)" +
-                                      "(SERVICE_NAME = XE)))'";
+                objCmd3.CommandText = "create database link " + "C_" + nombreServidor.Text + baseDatos.Text + "\n" +
+                                       "connect to SYSTEM identified by MANAGER \n" +
+                                        "using \n" +
+                                       "'(DESCRIPTION = \n" +
+                                        "(ADDRESS = (PROTOCOL = TCP)(HOST = " + ip_base.Text + ")(PORT =" + puerto.Text + ")) \n" +
+                                        "(CONNECT_DATA = \n" +
+                                        "(SERVER = DEDICATED) \n" +
+                                        "(SERVICE_NAME = XE) \n " +
+                                        ") \n" +
+                                        ")' \n ";
 
                 objCmd.CommandType = CommandType.Text;
                 OracleCommand objCmd2 = new OracleCommand();
                 objCmd2.Connection = objConn;
-                objCmd2.CommandText = "update CONEXIONES set IP = :1 ,PUERTO = :2, ALIVE = :3 where BASEDATOS = :4 and SERVIDOR =:5";
-
+                objCmd2.CommandText = "update connection set IP = :1 ,PORT = :2, ALIVE = :3 where conn_id = :4";
                 objCmd2.Parameters.Add(new OracleParameter("1", ip_base.Text));
                 objCmd2.Parameters.Add(new OracleParameter("2", puerto.Text));
-                char check = ' ';
-                if (checkBox1.Checked) { check = '1'; } else { check = '0'; };
+         
+                int check = ' ';
+                if (checkBox1.Checked) { check = 1; } else { check = 0; };
                 objCmd2.Parameters.Add(new OracleParameter("3", check));
-                objCmd2.Parameters.Add(new OracleParameter("4", bD));
-                objCmd2.Parameters.Add(new OracleParameter("5", s));
+                String generaId = "C_" + nombreServidor.Text + baseDatos.Text;
+                objCmd2.Parameters.Add(new OracleParameter("4",generaId));
+            
 
                 try
                 {
@@ -270,6 +270,7 @@ namespace Oracle_Tablespace_Monitor
                     objCmd.ExecuteNonQuery();
                     objCmd2.ExecuteNonQuery();
                     objCmd3.ExecuteNonQuery();
+
                     app.solicitaBases();
                     this.Close();
                     System.Windows.Forms.MessageBox.Show("Base de datos Modificada correctamente");
