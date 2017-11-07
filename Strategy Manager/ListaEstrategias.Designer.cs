@@ -67,21 +67,22 @@
             this.registrarEstrategias,
             this.crearEstrategiaDeRespaldoToolStripMenuItem});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
             this.opcionesToolStripMenuItem.Text = "Options";
             // 
             // registrarEstrategias
             // 
             this.registrarEstrategias.Name = "registrarEstrategias";
             this.registrarEstrategias.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
-            this.registrarEstrategias.Size = new System.Drawing.Size(235, 22);
+            this.registrarEstrategias.Size = new System.Drawing.Size(340, 30);
             this.registrarEstrategias.Text = "Registro de Estrategias";
+            this.registrarEstrategias.Click += new System.EventHandler(this.registrarEstrategias_click);
             // 
             // crearEstrategiaDeRespaldoToolStripMenuItem
             // 
             this.crearEstrategiaDeRespaldoToolStripMenuItem.Name = "crearEstrategiaDeRespaldoToolStripMenuItem";
             this.crearEstrategiaDeRespaldoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.J)));
-            this.crearEstrategiaDeRespaldoToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.crearEstrategiaDeRespaldoToolStripMenuItem.Size = new System.Drawing.Size(340, 30);
             this.crearEstrategiaDeRespaldoToolStripMenuItem.Text = "Editar Estrategia";
             // 
             // menuStrip1
@@ -92,7 +93,8 @@
             this.opcionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(818, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(1227, 35);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -100,10 +102,9 @@
             // 
             this.myLayout.AutoScroll = true;
             this.myLayout.Controls.Add(this.dataGridView1);
-            this.myLayout.Location = new System.Drawing.Point(9, 37);
-            this.myLayout.Margin = new System.Windows.Forms.Padding(2);
+            this.myLayout.Location = new System.Drawing.Point(14, 57);
             this.myLayout.Name = "myLayout";
-            this.myLayout.Size = new System.Drawing.Size(798, 405);
+            this.myLayout.Size = new System.Drawing.Size(1197, 623);
             this.myLayout.TabIndex = 17;
             // 
             // dataGridView1
@@ -113,28 +114,30 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 5);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(807, 402);
+            this.dataGridView1.Size = new System.Drawing.Size(1210, 618);
             this.dataGridView1.TabIndex = 3;
             // 
             // ListaEstrategia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.ClientSize = new System.Drawing.Size(818, 461);
+            this.ClientSize = new System.Drawing.Size(1227, 709);
             this.Controls.Add(this.myLayout);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "ListaEstrategia";
             this.Opacity = 0.8D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Proyecto 4";
+            this.Text = "Strategy Manager";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.myLayout.ResumeLayout(false);
@@ -160,12 +163,12 @@
         {
             RegistroBase ch = new RegistroBase(this);
             ch.ShowDialog(this);
-        }
-        private void creaEstrategiaToolStripMenuItem_click(object sender, EventArgs e)
-        {
-            CrearEstrategia ce = new CrearEstrategia(this);
-            ce.ShowDialog(this);
         }*/
+        private void registrarEstrategias_click(object sender, EventArgs e)
+        {
+            CrearEstrategia ce = new CrearEstrategia(app);
+            ce.ShowDialog(this);
+        }
         /*private void editarBaseDatosToolStripMenuItem_click(object sender, EventArgs e)
         {
             try
