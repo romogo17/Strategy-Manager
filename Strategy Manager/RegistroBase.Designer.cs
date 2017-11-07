@@ -226,6 +226,7 @@ namespace Oracle_Tablespace_Monitor
             {
                 OracleCommand objCmd = new OracleCommand();
                 objCmd.Connection = objConn;
+                objCmd.CommandType = CommandType.Text;
                 objCmd.CommandText = "create database link " + "C_"+ nombreServidor.Text + baseDatos.Text +"\n" +
                                        "connect to SYSTEM identified by MANAGER \n" +
                                         "using \n" +
@@ -236,18 +237,18 @@ namespace Oracle_Tablespace_Monitor
                                         "(SERVICE_NAME = XE) \n " +
                                         ") \n" +
                                         ")' \n ";
-
-                objCmd.CommandType = CommandType.Text;
+  
                 OracleCommand objCmd2 = new OracleCommand();
                 objCmd2.Connection = objConn;
-                objCmd2.CommandText = "Insert into connection VALUES (:1,:2,:3,:4,:5,:6)";
+                objCmd2.CommandText = "insert_connection";
+                objCmd2.CommandType = CommandType.StoredProcedure;
                 String generaId = "C_" + nombreServidor.Text + baseDatos.Text;
                 objCmd2.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, generaId, ParameterDirection.Input));
                 objCmd2.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, nombreServidor.Text, ParameterDirection.Input));
                 objCmd2.Parameters.Add(new OracleParameter("3", OracleDbType.Varchar2, baseDatos.Text, ParameterDirection.Input));
                 objCmd2.Parameters.Add(new OracleParameter("4", OracleDbType.Varchar2, ip_base.Text, ParameterDirection.Input));
                 objCmd2.Parameters.Add(new OracleParameter("5", OracleDbType.Varchar2, puerto_base.Text, ParameterDirection.Input));
-                objCmd2.Parameters.Add(new OracleParameter("5", OracleDbType.Decimal,1, ParameterDirection.Input));
+                objCmd2.Parameters.Add(new OracleParameter("6", OracleDbType.Decimal,1, ParameterDirection.Input));
 
                 try
                 {

@@ -18,24 +18,13 @@ namespace Oracle_Tablespace_Monitor
 {
     public partial class ListaLogs : Form
     {
-        public ListaLogs()
+        public ListaLogs(String estrategiaId)
         {
-           
             InitializeComponent();
-            solicitaLogs();
-            Thread.Sleep(1000);
-            app = this;
-
+            this.estrategiaId = estrategiaId;
+            solicitaLogs(estrategiaId);
+       
         }
-        private static ListaLogs app;
-
-        public static ListaLogs getApp()
-        {
-            if (app == null)
-            {   
-                return new ListaLogs();
-            }
-            return app;
-        }
+       
     }
 }

@@ -236,6 +236,7 @@ namespace Oracle_Tablespace_Monitor
             {
                 OracleCommand objCmd = new OracleCommand();
                 objCmd.Connection = objConn;
+                objCmd.CommandType = CommandType.Text;
                 objCmd.CommandText = "drop database link C_" + nombreServidor.Text + baseDatos.Text;
                 OracleCommand objCmd3 = new OracleCommand();
                 objCmd3.Connection = objConn;
@@ -250,10 +251,11 @@ namespace Oracle_Tablespace_Monitor
                                         ") \n" +
                                         ")' \n ";
 
-                objCmd.CommandType = CommandType.Text;
+                
                 OracleCommand objCmd2 = new OracleCommand();
                 objCmd2.Connection = objConn;
-                objCmd2.CommandText = "update connection set IP = :1 ,PORT = :2, ALIVE = :3 where conn_id = :4";
+                objCmd2.CommandType = CommandType.StoredProcedure;
+                objCmd2.CommandText = "update_connection";
                 objCmd2.Parameters.Add(new OracleParameter("1", ip_base.Text));
                 objCmd2.Parameters.Add(new OracleParameter("2", puerto.Text));
          

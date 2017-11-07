@@ -118,6 +118,7 @@
         private MenuStrip menuStrip1;
         private FlowLayoutPanel myLayout;
         private DataGridView dataGridView1;
+        private String estrategiaId;
 
        
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -129,7 +130,7 @@
 
         }
 
-        public void solicitaLogs()
+        public void solicitaLogs(String estrategia)
         {   /*
             using (OracleConnection objConn = new OracleConnection(ConfigurationManager.AppSettings["connectionString"]))
             {

@@ -168,8 +168,8 @@
             String servidor = "";
             if (e.RowIndex>= 0) {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                baseBusqueda = row.Cells["BASEDATOS"].Value.ToString();
-                servidor = row.Cells["SERVIDOR"].Value.ToString();
+                baseBusqueda = row.Cells["DATABASE_INSTANCE"].Value.ToString();
+                servidor = row.Cells["CONN_NAME"].Value.ToString();
                 ListaEstrategia lista = new ListaEstrategia(this, servidor, baseBusqueda);
                 System.Windows.Forms.MessageBox.Show(servidor + baseBusqueda);
                 lista.ShowDialog();

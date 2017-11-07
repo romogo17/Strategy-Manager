@@ -92,7 +92,7 @@ using
 (SERVER = DEDICATED)
 (SERVICE_NAME = XE)))'
  /
- --Procedimientos para conseguir las bases de datos
+ --Funcion para conseguir las bases de datos
  CREATE OR REPLACE FUNCTION get_database
   RETURN SYS_REFCURSOR IS
 	cr SYS_REFCURSOR;
@@ -100,5 +100,29 @@ using
     OPEN cr FOR SELECT * FROM connection;
     RETURN cr;
   END;
+/
+--Procedimiento para insertar una conexion
+CREATE OR REPLACE PROCEDURE insert_connection(id in varchar2, nombreServidor in varchar2,baseDatos in varchar2,ipBase in varchar2,puertoBase in varchar2,alive in number)
+  IS
+  BEGIN
+    insert into connection values (id,nombreServidor,baseDatos,ipBase,puertoBase,alive);
+    COMMIT;
+
+   EXCEPTION
+     WHEN OTHERS THEN ROLLBACK;
+  END;
+/
+
+--Procedimiento para actualizar una conexion
+CREATE OR REPLACE PROCEDURE update_connection(ipBase in varchar2, puertoBase in varchar2,aliveBase in number,id in varchar2)
+  IS
+  BEGIN
+    update connection set IP = ipBase ,PORT = puertoBase, ALIVE = aliveBase where conn_id = id;
+    COMMIT;
+
+   EXCEPTION
+     WHEN OTHERS THEN ROLLBACK;
+  END;
+ 
 /
  
