@@ -101,13 +101,13 @@ using
     RETURN cr;
   END;
 /
+
 --Procedimiento para insertar una conexion
 CREATE OR REPLACE PROCEDURE insert_connection(id in varchar2, nombreServidor in varchar2,baseDatos in varchar2,ipBase in varchar2,puertoBase in varchar2,alive in number)
   IS
   BEGIN
     insert into connection values (id,nombreServidor,baseDatos,ipBase,puertoBase,alive);
     COMMIT;
-
    EXCEPTION
      WHEN OTHERS THEN ROLLBACK;
   END;
@@ -119,10 +119,21 @@ CREATE OR REPLACE PROCEDURE update_connection(ipBase in varchar2, puertoBase in 
   BEGIN
     update connection set IP = ipBase ,PORT = puertoBase, ALIVE = aliveBase where conn_id = id;
     COMMIT;
-
    EXCEPTION
      WHEN OTHERS THEN ROLLBACK;
   END;
- 
 /
+
+--Procedimiento para insertar una estrategia
+CREATE OR REPLACE PROCEDURE insert_strategy(name in varchar2, connection in varchar2, priori in varchar2)
+  IS
+  BEGIN
+    insert into strategy(strategy_id, connection, priority) values (name, connection, priori);
+    COMMIT;
+    EXCEPTION
+     WHEN OTHERS THEN ROLLBACK;
+  END;
+/
+
+ --Funcion para conseguir las bases de datos
  

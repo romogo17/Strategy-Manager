@@ -120,6 +120,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(1210, 618);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
             // ListaEstrategia
             // 
@@ -159,17 +160,28 @@
         private String busquedaServidor;
         private Application app;
 
-        /*private void registrarBaseDatosToolStripMenuItem_click(object sender, EventArgs e)
-        {
-            RegistroBase ch = new RegistroBase(this);
-            ch.ShowDialog(this);
-        }*/
         private void registrarEstrategias_click(object sender, EventArgs e)
         {
             CrearEstrategia ce = new CrearEstrategia(app);
             ce.ShowDialog(this);
         }
-        /*private void editarBaseDatosToolStripMenuItem_click(object sender, EventArgs e)
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //String baseBusqueda="";
+            //String servidor = "";
+            //if (e.RowIndex>= 0) {
+            //    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+            //    baseBusqueda = row.Cells["DATABASE_INSTANCE"].Value.ToString();
+            //    servidor = row.Cells["CONN_NAME"].Value.ToString();
+            //    ListaEstrategia lista = new ListaEstrategia(this, servidor, baseBusqueda);
+            //    System.Windows.Forms.MessageBox.Show(servidor + baseBusqueda);
+            //    lista.ShowDialog();
+               
+            //}
+        } 
+
+        /* private void editarBaseDatosToolStripMenuItem_click(object sender, EventArgs e)
         {
             try
             {
@@ -188,37 +200,36 @@
 
         public void solicitaEstrategias()
         {
-            /*   using (OracleConnection objConn = new OracleConnection(ConfigurationManager.AppSettings["connectionString"]))
-               {
-                   DataSet basesRegistradas = new DataSet("Bases");
-                   // Create and execute the command
-                   OracleCommand objCmd = new OracleCommand();
-                   objCmd.Connection = objConn;
-                   objCmd.CommandText = "get_database";
-                   objCmd.CommandType = CommandType.StoredProcedure;
-                   // Set parameters
-                   OracleParameter retParam = objCmd.Parameters.Add("return_value", OracleDbType.RefCursor, ParameterDirection.ReturnValue);
-                   //objCmd.Parameters.Add("return_value", OracleDbType.Int32, sgaSize, System.Data.ParameterDirection.Input);
+            using (OracleConnection objConn = new OracleConnection(ConfigurationManager.AppSettings["connectionString"]))
+            {
+                DataSet basesRegistradas = new DataSet("Estrategias");
+                //Create and execute the command
+                OracleCommand objCmd = new OracleCommand();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "get_strategy";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                //Set parameters
+                OracleParameter retParam = objCmd.Parameters.Add("return_value", OracleDbType.RefCursor, ParameterDirection.ReturnValue);
 
-                   try
-                   {
-                       objConn.Open();
-                       objCmd.ExecuteNonQuery();
-                       OracleDataAdapter a = new OracleDataAdapter(objCmd);
-                       a.TableMappings.Add("MyTable", "sample_table"); // possible need for this
-                       a.Fill(basesRegistradas);
-                       dataGridView1.DataSource = basesRegistradas.Tables[0];
-                       //return sqlInfo;
-                       //System.Console.WriteLine("Memory Usage is {0}", retParam.Value);
-                   }
-                   catch (Exception ex)
-                   {
-                       System.Console.WriteLine("Exception: {0}", ex.ToString());
-                   }
+                try
+                {
+                    objConn.Open();
+                    objCmd.ExecuteNonQuery();
+                    OracleDataAdapter a = new OracleDataAdapter(objCmd);
+                    a.TableMappings.Add("MyTable", "sample_table"); // possible need for this
+                    a.Fill(basesRegistradas);
+                    dataGridView1.DataSource = basesRegistradas.Tables[0];
+                    //return sqlInfo;
+                    //System.Console.WriteLine("Memory Usage is {0}", retParam.Value);
+                }
+                catch (Exception ex)
+                {
+                    System.Console.WriteLine("Exception: {0}", ex.ToString());
+                }
 
-                   objConn.Close();
-                   objConn.Dispose();
-               }*/
+                objConn.Close();
+                objConn.Dispose();
+            }
         }
     }
     

@@ -314,17 +314,18 @@ namespace Oracle_Tablespace_Monitor
             {
                 OracleCommand objCmd = new OracleCommand();
                 objCmd.Connection = objConn;
-                objCmd.CommandText = "Insert into STRATEGY VALUES(:1,:2,:3,:4)";
+                objCmd.CommandText = "insert_strategy";
+                objCmd.CommandType = CommandType.StoredProcedure;
 
-                
+
                 //OracleCommand objCmd2 = new OracleCommand();
                 //objCmd2.Connection = objConn;
                 //objCmd2.CommandText = "Insert into CONEXIONES VALUES (:1,:2,:3,:4,:5)";
 
                 objCmd.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, "EST_", ParameterDirection.Input));
-                objCmd.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, "C_1509986176", ParameterDirection.InputOutput));
+                objCmd.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, "C_1509986176", ParameterDirection.Input));
                 objCmd.Parameters.Add(new OracleParameter("3", OracleDbType.Varchar2, "MEDIUM", ParameterDirection.Input));
-                objCmd.Parameters.Add(new OracleParameter("4", OracleDbType.Decimal, 1, ParameterDirection.Input));
+                //objCmd.Parameters.Add(new OracleParameter("4", OracleDbType.Decimal, 1, ParameterDirection.Input));
                 //objCmd2.Parameters.Add(new OracleParameter("5", OracleDbType.Char, '1', ParameterDirection.Input));
                 try
                 {
