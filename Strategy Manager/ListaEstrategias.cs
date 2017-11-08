@@ -21,8 +21,9 @@ namespace Oracle_Tablespace_Monitor
         public ListaEstrategia(Application application,String ser, String bas, String conexion)
         {
             InitializeComponent();
-            this.Text = "Servidor: " + ser + "- Base de datos: " + bas;
             app = application;
+            dbServer.Text = "Server: "+ser;
+            dbInstance.Text = "Database Instance: "+bas;
             solicitaEstrategias(conexion);
         }
 
