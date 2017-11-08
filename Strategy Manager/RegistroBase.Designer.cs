@@ -53,12 +53,12 @@ namespace Oracle_Tablespace_Monitor
             this.Label1.AutoSize = true;
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.Label1.Location = new System.Drawing.Point(45, 278);
+            this.Label1.Location = new System.Drawing.Point(58, 278);
             this.Label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(104, 29);
+            this.Label1.Size = new System.Drawing.Size(84, 29);
             this.Label1.TabIndex = 0;
-            this.Label1.Text = "Servidor";
+            this.Label1.Text = "Server";
             this.Label1.UseMnemonic = false;
             // 
             // Label2
@@ -66,12 +66,12 @@ namespace Oracle_Tablespace_Monitor
             this.Label2.AutoSize = true;
             this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.Label2.Location = new System.Drawing.Point(45, 318);
+            this.Label2.Location = new System.Drawing.Point(58, 318);
             this.Label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(323, 29);
+            this.Label2.Size = new System.Drawing.Size(181, 29);
             this.Label2.TabIndex = 0;
-            this.Label2.Text = "Nombre de la Base de Datos";
+            this.Label2.Text = "Database name";
             this.Label2.UseMnemonic = false;
             // 
             // IP_Servidor
@@ -79,12 +79,12 @@ namespace Oracle_Tablespace_Monitor
             this.IP_Servidor.AutoSize = true;
             this.IP_Servidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IP_Servidor.ForeColor = System.Drawing.SystemColors.Control;
-            this.IP_Servidor.Location = new System.Drawing.Point(45, 369);
+            this.IP_Servidor.Location = new System.Drawing.Point(58, 359);
             this.IP_Servidor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.IP_Servidor.Name = "IP_Servidor";
-            this.IP_Servidor.Size = new System.Drawing.Size(172, 29);
+            this.IP_Servidor.Size = new System.Drawing.Size(130, 29);
             this.IP_Servidor.TabIndex = 0;
-            this.IP_Servidor.Text = "IP del Servidor";
+            this.IP_Servidor.Text = "IP Address";
             this.IP_Servidor.UseMnemonic = false;
             // 
             // label4
@@ -92,16 +92,16 @@ namespace Oracle_Tablespace_Monitor
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label4.Location = new System.Drawing.Point(45, 412);
+            this.label4.Location = new System.Drawing.Point(58, 404);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 29);
+            this.label4.Size = new System.Drawing.Size(57, 29);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Puerto";
+            this.label4.Text = "Port";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(324, 557);
+            this.button1.Location = new System.Drawing.Point(308, 536);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 35);
@@ -113,7 +113,7 @@ namespace Oracle_Tablespace_Monitor
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(444, 557);
+            this.button2.Location = new System.Drawing.Point(428, 536);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 35);
@@ -124,7 +124,7 @@ namespace Oracle_Tablespace_Monitor
             // 
             // nombreServidor
             // 
-            this.nombreServidor.Location = new System.Drawing.Point(374, 278);
+            this.nombreServidor.Location = new System.Drawing.Point(347, 278);
             this.nombreServidor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nombreServidor.Name = "nombreServidor";
             this.nombreServidor.Size = new System.Drawing.Size(148, 26);
@@ -132,7 +132,7 @@ namespace Oracle_Tablespace_Monitor
             // 
             // baseDatos
             // 
-            this.baseDatos.Location = new System.Drawing.Point(374, 318);
+            this.baseDatos.Location = new System.Drawing.Point(347, 321);
             this.baseDatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.baseDatos.Name = "baseDatos";
             this.baseDatos.Size = new System.Drawing.Size(148, 26);
@@ -140,7 +140,7 @@ namespace Oracle_Tablespace_Monitor
             // 
             // ip_base
             // 
-            this.ip_base.Location = new System.Drawing.Point(374, 372);
+            this.ip_base.Location = new System.Drawing.Point(347, 362);
             this.ip_base.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ip_base.Name = "ip_base";
             this.ip_base.Size = new System.Drawing.Size(148, 26);
@@ -148,7 +148,7 @@ namespace Oracle_Tablespace_Monitor
             // 
             // puerto_base
             // 
-            this.puerto_base.Location = new System.Drawing.Point(374, 412);
+            this.puerto_base.Location = new System.Drawing.Point(347, 404);
             this.puerto_base.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.puerto_base.Name = "puerto_base";
             this.puerto_base.Size = new System.Drawing.Size(148, 26);
@@ -158,10 +158,11 @@ namespace Oracle_Tablespace_Monitor
             // 
             this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
             this.pictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.InitialImage")));
-            this.pictureBox.Location = new System.Drawing.Point(166, 18);
+            this.pictureBox.Location = new System.Drawing.Point(193, 43);
             this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(224, 226);
+            this.pictureBox.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
@@ -194,7 +195,7 @@ namespace Oracle_Tablespace_Monitor
             this.Name = "RegistroBase";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Registro de una Base de Datos";
+            this.Text = "Register Database";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
