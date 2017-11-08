@@ -59,6 +59,9 @@ values ('C_1509986176','local','XE','127.0.0.1');
 
 insert into strategy(strategy_id, connection, priority)
 values ('EST_1509986176','C_1509986176','MEDIUM');
+
+insert into strategy(strategy_id, connection, priority)
+values ('EST_1509986176','C_MexicoDB1','MEDIUM');
 insert into strategy(strategy_id, connection, priority)
 values ('EST_1509986180','C_1509986176','MEDIUM');
 
@@ -100,14 +103,14 @@ using
     OPEN cr FOR SELECT * FROM connection;
     RETURN cr;
   END;
-/
-
+/ 
 --Procedimiento para insertar una conexion
 CREATE OR REPLACE PROCEDURE insert_connection(id in varchar2, nombreServidor in varchar2,baseDatos in varchar2,ipBase in varchar2,puertoBase in varchar2,alive in number)
   IS
   BEGIN
     insert into connection values (id,nombreServidor,baseDatos,ipBase,puertoBase,alive);
     COMMIT;
+
    EXCEPTION
      WHEN OTHERS THEN ROLLBACK;
   END;
@@ -119,28 +122,46 @@ CREATE OR REPLACE PROCEDURE update_connection(ipBase in varchar2, puertoBase in 
   BEGIN
     update connection set IP = ipBase ,PORT = puertoBase, ALIVE = aliveBase where conn_id = id;
     COMMIT;
+
    EXCEPTION
      WHEN OTHERS THEN ROLLBACK;
   END;
 /
-
 --Procedimiento para insertar una estrategia
 CREATE OR REPLACE PROCEDURE insert_strategy(name in varchar2, connection in varchar2, priori in varchar2)
-  IS
-  BEGIN
-    insert into strategy(strategy_id, connection, priority) values (name, connection, priori);
-    COMMIT;
-    EXCEPTION
-     WHEN OTHERS THEN ROLLBACK;
-  END;
+   IS
+   BEGIN
+      insert into strategy(strategy_id, connection, priority) values (name, connection, priori);
+      COMMIT;
+      EXCEPTION
+       WHEN OTHERS THEN ROLLBACK;
+END;
 /
 
  --Funcion para conseguir las estrategias
- create or replace function get_strategy(strategy in varchar2)
-    return SYS_REFCURSOR IS
-    cr SYS_REFCURSOR;
-   BEGIN
-    OPEN cr FOR SELECT * FROM STRATEGY WHERE connection = strategy;
-    RETURN cr;
+create or replace function get_strategy(strategy in varchar2)
+   return SYS_REFCURSOR IS
+   cr SYS_REFCURSOR;
+    BEGIN
+     OPEN cr FOR SELECT * FROM STRATEGY WHERE connection = strategy;
+     RETURN cr;
    END;
-   /
+/
+create or replace function get_log(strategy in varchar2)
+   return SYS_REFCURSOR IS
+   cr SYS_REFCURSOR;
+    BEGIN
+     OPEN cr FOR SELECT * from log STRATEGY WHERE strategy_id =strategy ;
+     RETURN cr;
+   END;
+/
+--Estructura Scripts
+--BACKUP CURRENT CONTROLFILE              Control
+--BACKUP SPFILE                           spfile
+--BACKUP ARCHIVELOG ALL           		  LOGS
+--BACKUP TABLESPACE NOMBRE_TABLESPACE     TABLESPACE
+
+--BACKUP DATABASE                         TODOS LOS DATAFILES //incluye control y pfile
+
+--BACKUP INCREMENTAL LEVEL 1 DATABASE;    INCREMENTAL         //incluye control y pfile
+--BACKUP INCREMENTAL LEVEL 0 DATABASE;	  INCREMENTAL		  //incluye control y pfile

@@ -75,14 +75,14 @@
             this.registrarEstrategias,
             this.crearEstrategiaDeRespaldoToolStripMenuItem});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
+            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.opcionesToolStripMenuItem.Text = "Options";
             // 
             // registrarEstrategias
             // 
             this.registrarEstrategias.Name = "registrarEstrategias";
             this.registrarEstrategias.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
-            this.registrarEstrategias.Size = new System.Drawing.Size(305, 30);
+            this.registrarEstrategias.Size = new System.Drawing.Size(213, 22);
             this.registrarEstrategias.Text = "Register Strategies";
             this.registrarEstrategias.Click += new System.EventHandler(this.registrarEstrategias_click);
             // 
@@ -90,7 +90,7 @@
             // 
             this.crearEstrategiaDeRespaldoToolStripMenuItem.Name = "crearEstrategiaDeRespaldoToolStripMenuItem";
             this.crearEstrategiaDeRespaldoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.J)));
-            this.crearEstrategiaDeRespaldoToolStripMenuItem.Size = new System.Drawing.Size(305, 30);
+            this.crearEstrategiaDeRespaldoToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.crearEstrategiaDeRespaldoToolStripMenuItem.Text = "Edit Strategies";
             // 
             // menuStrip1
@@ -101,8 +101,7 @@
             this.opcionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1227, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(818, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -110,9 +109,10 @@
             // 
             this.myLayout.AutoScroll = true;
             this.myLayout.Controls.Add(this.dataGridView1);
-            this.myLayout.Location = new System.Drawing.Point(48, 180);
+            this.myLayout.Location = new System.Drawing.Point(32, 117);
+            this.myLayout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.myLayout.Name = "myLayout";
-            this.myLayout.Size = new System.Drawing.Size(1146, 500);
+            this.myLayout.Size = new System.Drawing.Size(764, 325);
             this.myLayout.TabIndex = 17;
             // 
             // dataGridView1
@@ -145,9 +145,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.GridColor = System.Drawing.Color.Black;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 5);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dataGridView1.MaximumSize = new System.Drawing.Size(992, 188);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.MaximumSize = new System.Drawing.Size(661, 122);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -164,7 +163,7 @@
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(992, 188);
+            this.dataGridView1.Size = new System.Drawing.Size(661, 122);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
@@ -173,9 +172,10 @@
             this.strategiesTitle.AutoSize = true;
             this.strategiesTitle.Font = new System.Drawing.Font("Arial Narrow", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.strategiesTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.strategiesTitle.Location = new System.Drawing.Point(37, 44);
+            this.strategiesTitle.Location = new System.Drawing.Point(28, 27);
+            this.strategiesTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.strategiesTitle.Name = "strategiesTitle";
-            this.strategiesTitle.Size = new System.Drawing.Size(373, 62);
+            this.strategiesTitle.Size = new System.Drawing.Size(250, 42);
             this.strategiesTitle.TabIndex = 18;
             this.strategiesTitle.Text = "Backup Strategies";
             // 
@@ -184,9 +184,10 @@
             this.dbServer.AutoSize = true;
             this.dbServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dbServer.ForeColor = System.Drawing.Color.White;
-            this.dbServer.Location = new System.Drawing.Point(47, 106);
+            this.dbServer.Location = new System.Drawing.Point(31, 69);
+            this.dbServer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dbServer.Name = "dbServer";
-            this.dbServer.Size = new System.Drawing.Size(96, 29);
+            this.dbServer.Size = new System.Drawing.Size(63, 20);
             this.dbServer.TabIndex = 19;
             this.dbServer.Text = "Server: ";
             // 
@@ -195,18 +196,19 @@
             this.dbInstance.AutoSize = true;
             this.dbInstance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dbInstance.ForeColor = System.Drawing.Color.White;
-            this.dbInstance.Location = new System.Drawing.Point(47, 135);
+            this.dbInstance.Location = new System.Drawing.Point(31, 88);
+            this.dbInstance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dbInstance.Name = "dbInstance";
-            this.dbInstance.Size = new System.Drawing.Size(222, 29);
+            this.dbInstance.Size = new System.Drawing.Size(153, 20);
             this.dbInstance.TabIndex = 20;
             this.dbInstance.Text = "Database Instance: ";
             // 
             // ListaEstrategia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.ClientSize = new System.Drawing.Size(1227, 709);
+            this.ClientSize = new System.Drawing.Size(818, 461);
             this.Controls.Add(this.dbInstance);
             this.Controls.Add(this.dbServer);
             this.Controls.Add(this.strategiesTitle);
@@ -215,7 +217,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "ListaEstrategia";
             this.Opacity = 0.8D;
@@ -250,17 +251,15 @@
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //String baseBusqueda="";
-            //String servidor = "";
-            //if (e.RowIndex>= 0) {
-            //    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-            //    baseBusqueda = row.Cells["DATABASE_INSTANCE"].Value.ToString();
-            //    servidor = row.Cells["CONN_NAME"].Value.ToString();
-            //    ListaEstrategia lista = new ListaEstrategia(this, servidor, baseBusqueda);
-            //    System.Windows.Forms.MessageBox.Show(servidor + baseBusqueda);
-            //    lista.ShowDialog();
+            int index = dataGridView1.CurrentCell.RowIndex;
+            String idEstrategia="";
+            if (index>= 0) {
+                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                idEstrategia = row.Cells["STRATEGY_ID"].Value.ToString();
+                ListaLogs lista = new ListaLogs(idEstrategia);
+                lista.ShowDialog();
                
-            //}
+            }
         } 
 
         /* private void editarBaseDatosToolStripMenuItem_click(object sender, EventArgs e)
@@ -314,6 +313,7 @@
                 objConn.Dispose();
             }
         }
+
 
         private Label strategiesTitle;
         private Label dbServer;

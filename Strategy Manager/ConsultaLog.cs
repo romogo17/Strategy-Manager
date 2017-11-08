@@ -16,14 +16,14 @@ using Brushes = System.Windows.Media.Brushes;
 
 namespace Oracle_Tablespace_Monitor
 {
-    public partial class ListaLogs : Form
+    public partial class ConsultaLog : Form
     {
-        public ListaLogs(String estrategia)
+        public ConsultaLog(String estrategia,String momento,String log)
         {
             InitializeComponent();
-            strategy.Text = "Strategy : " + estrategia;
-            solicitaLogs(estrategia);
-       
+            logId.Text = "Log: "+estrategia;
+            logDate.Text = "Date: " + momento;
+            logDescrip.Text = log;       
         }
 
     }
