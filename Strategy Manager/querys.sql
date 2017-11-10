@@ -28,6 +28,7 @@ create table strategy (
 create table strategy_line (
 	strategy_id varchar2(25) not null, -- puede corresponder al tiempo UNIX, asi se garantiza que no se repita
 	line varchar2(255) null,
+	numline int,
 	CONSTRAINT strategy_line_fk FOREIGN KEY (strategy_id) REFERENCES strategy(strategy_id)
 ) tablespace backup_metadata;
 
@@ -169,14 +170,4 @@ create or replace function get_log(strategy in varchar2)
 --BACKUP INCREMENTAL LEVEL 1 DATABASE;    INCREMENTAL         //incluye control y pfile
 --BACKUP INCREMENTAL LEVEL 0 DATABASE;	  INCREMENTAL		  //incluye control y pfile
 
---Procedimiento para insertar una linea de la estrategia
-CREATE OR REPLACE PROCEDURE insert_strategyline(strategy_id in varchar2, line in varchar2)
-  IS
-  BEGIN
-    insert into strategy_line(strategy_id,line) values (strategy_id, line);
-    COMMIT;
 
-    EXCEPTION
-     WHEN OTHERS THEN ROLLBACK;
-  END;
-/

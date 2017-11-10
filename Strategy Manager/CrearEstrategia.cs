@@ -18,6 +18,7 @@ namespace Strategy_Manager
             dbInstance.Text = "Database Instance: " + instancia;
             bdServer.Text = "Server: " + servidor;
             connection = conexion;
+            solicitaTablespaces(connection);
             app = application;
             backupScript.Add("run{");
 
