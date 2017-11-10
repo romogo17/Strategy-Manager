@@ -71,7 +71,6 @@
             // logDescrip
             // 
             this.logDescrip.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.logDescrip.Enabled = false;
             this.logDescrip.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.logDescrip.Location = new System.Drawing.Point(12, 122);
             this.logDescrip.Multiline = true;
