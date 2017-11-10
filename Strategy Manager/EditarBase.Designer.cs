@@ -276,12 +276,12 @@ namespace Strategy_Manager
 
                     app.solicitaBases();
                     this.Close();
-                    System.Windows.Forms.MessageBox.Show("Base de datos Modificada correctamente");
+                    System.Windows.Forms.MessageBox.Show("Database connection updated successfully");
 
                 }
                 catch (Exception ex)
                 {
-                    System.Windows.Forms.MessageBox.Show("No se pudo modificar la base de datos");
+                    System.Windows.Forms.MessageBox.Show("Error");
                 }
 
                 objConn.Close();

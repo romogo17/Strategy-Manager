@@ -75,13 +75,6 @@ namespace Strategy_Manager
             this.MJ = new System.Windows.Forms.ComboBox();
             this.MI = new System.Windows.Forms.ComboBox();
             this.MM = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -91,9 +84,10 @@ namespace Strategy_Manager
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(584, 539);
+            this.button1.Location = new System.Drawing.Point(876, 829);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(112, 35);
             this.button1.TabIndex = 2;
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
@@ -102,9 +96,10 @@ namespace Strategy_Manager
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(665, 539);
+            this.button2.Location = new System.Drawing.Point(998, 829);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(112, 35);
             this.button2.TabIndex = 3;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
@@ -113,7 +108,8 @@ namespace Strategy_Manager
             // picture
             // 
             this.picture.Image = ((System.Drawing.Image)(resources.GetObject("picture.Image")));
-            this.picture.Location = new System.Drawing.Point(310, 434);
+            this.picture.Location = new System.Drawing.Point(465, 668);
+            this.picture.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.picture.Name = "picture";
             this.picture.Size = new System.Drawing.Size(64, 64);
             this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -125,10 +121,9 @@ namespace Strategy_Manager
             this.bdServer.AutoSize = true;
             this.bdServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bdServer.ForeColor = System.Drawing.Color.White;
-            this.bdServer.Location = new System.Drawing.Point(22, 63);
-            this.bdServer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bdServer.Location = new System.Drawing.Point(33, 97);
             this.bdServer.Name = "bdServer";
-            this.bdServer.Size = new System.Drawing.Size(63, 20);
+            this.bdServer.Size = new System.Drawing.Size(96, 29);
             this.bdServer.TabIndex = 17;
             this.bdServer.Text = "Server: ";
             // 
@@ -137,10 +132,9 @@ namespace Strategy_Manager
             this.dbInstance.AutoSize = true;
             this.dbInstance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dbInstance.ForeColor = System.Drawing.Color.White;
-            this.dbInstance.Location = new System.Drawing.Point(22, 83);
-            this.dbInstance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.dbInstance.Location = new System.Drawing.Point(33, 128);
             this.dbInstance.Name = "dbInstance";
-            this.dbInstance.Size = new System.Drawing.Size(149, 20);
+            this.dbInstance.Size = new System.Drawing.Size(216, 29);
             this.dbInstance.TabIndex = 18;
             this.dbInstance.Text = "Database Instance:";
             // 
@@ -149,10 +143,9 @@ namespace Strategy_Manager
             this.typeBackup.AutoSize = true;
             this.typeBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.typeBackup.ForeColor = System.Drawing.Color.White;
-            this.typeBackup.Location = new System.Drawing.Point(23, 120);
-            this.typeBackup.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.typeBackup.Location = new System.Drawing.Point(34, 185);
             this.typeBackup.Name = "typeBackup";
-            this.typeBackup.Size = new System.Drawing.Size(119, 18);
+            this.typeBackup.Size = new System.Drawing.Size(174, 26);
             this.typeBackup.TabIndex = 23;
             this.typeBackup.Text = "Type of Backup: ";
             // 
@@ -161,9 +154,10 @@ namespace Strategy_Manager
             this.strategiesTitle.AutoSize = true;
             this.strategiesTitle.Font = new System.Drawing.Font("Arial Narrow", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.strategiesTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.strategiesTitle.Location = new System.Drawing.Point(19, 9);
+            this.strategiesTitle.Location = new System.Drawing.Point(28, 14);
+            this.strategiesTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.strategiesTitle.Name = "strategiesTitle";
-            this.strategiesTitle.Size = new System.Drawing.Size(147, 42);
+            this.strategiesTitle.Size = new System.Drawing.Size(219, 62);
             this.strategiesTitle.TabIndex = 24;
             this.strategiesTitle.Text = "Strategies";
             // 
@@ -172,9 +166,10 @@ namespace Strategy_Manager
             this.fullBackupCB.AutoSize = true;
             this.fullBackupCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fullBackupCB.ForeColor = System.Drawing.Color.White;
-            this.fullBackupCB.Location = new System.Drawing.Point(123, 151);
+            this.fullBackupCB.Location = new System.Drawing.Point(184, 232);
+            this.fullBackupCB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.fullBackupCB.Name = "fullBackupCB";
-            this.fullBackupCB.Size = new System.Drawing.Size(97, 20);
+            this.fullBackupCB.Size = new System.Drawing.Size(140, 29);
             this.fullBackupCB.TabIndex = 25;
             this.fullBackupCB.Text = "Full Backup";
             this.fullBackupCB.UseVisualStyleBackColor = true;
@@ -185,9 +180,10 @@ namespace Strategy_Manager
             this.ARCHIVE_CB.AutoSize = true;
             this.ARCHIVE_CB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ARCHIVE_CB.ForeColor = System.Drawing.Color.White;
-            this.ARCHIVE_CB.Location = new System.Drawing.Point(123, 178);
+            this.ARCHIVE_CB.Location = new System.Drawing.Point(184, 274);
+            this.ARCHIVE_CB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ARCHIVE_CB.Name = "ARCHIVE_CB";
-            this.ARCHIVE_CB.Size = new System.Drawing.Size(131, 20);
+            this.ARCHIVE_CB.Size = new System.Drawing.Size(189, 29);
             this.ARCHIVE_CB.TabIndex = 26;
             this.ARCHIVE_CB.Text = "Backup Archive\'s";
             this.ARCHIVE_CB.UseVisualStyleBackColor = true;
@@ -198,9 +194,10 @@ namespace Strategy_Manager
             this.incrementalBackupCB.AutoSize = true;
             this.incrementalBackupCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incrementalBackupCB.ForeColor = System.Drawing.Color.White;
-            this.incrementalBackupCB.Location = new System.Drawing.Point(123, 205);
+            this.incrementalBackupCB.Location = new System.Drawing.Point(184, 315);
+            this.incrementalBackupCB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.incrementalBackupCB.Name = "incrementalBackupCB";
-            this.incrementalBackupCB.Size = new System.Drawing.Size(145, 20);
+            this.incrementalBackupCB.Size = new System.Drawing.Size(210, 29);
             this.incrementalBackupCB.TabIndex = 27;
             this.incrementalBackupCB.Text = "Incremental Backup";
             this.incrementalBackupCB.UseVisualStyleBackColor = true;
@@ -209,9 +206,10 @@ namespace Strategy_Manager
             // level0
             // 
             this.level0.AutoSize = true;
-            this.level0.Location = new System.Drawing.Point(23, 19);
+            this.level0.Location = new System.Drawing.Point(34, 29);
+            this.level0.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.level0.Name = "level0";
-            this.level0.Size = new System.Drawing.Size(69, 20);
+            this.level0.Size = new System.Drawing.Size(100, 29);
             this.level0.TabIndex = 0;
             this.level0.TabStop = true;
             this.level0.Text = "Level 0";
@@ -221,9 +219,10 @@ namespace Strategy_Manager
             // level1
             // 
             this.level1.AutoSize = true;
-            this.level1.Location = new System.Drawing.Point(23, 42);
+            this.level1.Location = new System.Drawing.Point(34, 65);
+            this.level1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.level1.Name = "level1";
-            this.level1.Size = new System.Drawing.Size(69, 20);
+            this.level1.Size = new System.Drawing.Size(100, 29);
             this.level1.TabIndex = 1;
             this.level1.TabStop = true;
             this.level1.Text = "Level 1";
@@ -237,9 +236,11 @@ namespace Strategy_Manager
             this.levelGroupBox.Enabled = false;
             this.levelGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.levelGroupBox.ForeColor = System.Drawing.Color.White;
-            this.levelGroupBox.Location = new System.Drawing.Point(165, 231);
+            this.levelGroupBox.Location = new System.Drawing.Point(248, 355);
+            this.levelGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.levelGroupBox.Name = "levelGroupBox";
-            this.levelGroupBox.Size = new System.Drawing.Size(126, 73);
+            this.levelGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.levelGroupBox.Size = new System.Drawing.Size(189, 112);
             this.levelGroupBox.TabIndex = 31;
             this.levelGroupBox.TabStop = false;
             this.levelGroupBox.Text = "Level:";
@@ -249,9 +250,10 @@ namespace Strategy_Manager
             this.partialBackupCB.AutoSize = true;
             this.partialBackupCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.partialBackupCB.ForeColor = System.Drawing.Color.White;
-            this.partialBackupCB.Location = new System.Drawing.Point(123, 310);
+            this.partialBackupCB.Location = new System.Drawing.Point(184, 477);
+            this.partialBackupCB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.partialBackupCB.Name = "partialBackupCB";
-            this.partialBackupCB.Size = new System.Drawing.Size(114, 20);
+            this.partialBackupCB.Size = new System.Drawing.Size(163, 29);
             this.partialBackupCB.TabIndex = 32;
             this.partialBackupCB.Text = "Partial Backup";
             this.partialBackupCB.UseVisualStyleBackColor = true;
@@ -263,9 +265,10 @@ namespace Strategy_Manager
             this.controlCheckBox.Enabled = false;
             this.controlCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.controlCheckBox.ForeColor = System.Drawing.Color.White;
-            this.controlCheckBox.Location = new System.Drawing.Point(174, 337);
+            this.controlCheckBox.Location = new System.Drawing.Point(261, 518);
+            this.controlCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.controlCheckBox.Name = "controlCheckBox";
-            this.controlCheckBox.Size = new System.Drawing.Size(69, 20);
+            this.controlCheckBox.Size = new System.Drawing.Size(101, 29);
             this.controlCheckBox.TabIndex = 33;
             this.controlCheckBox.Text = "Control";
             this.controlCheckBox.UseVisualStyleBackColor = true;
@@ -276,9 +279,10 @@ namespace Strategy_Manager
             this.spfileCheckBox.Enabled = false;
             this.spfileCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.spfileCheckBox.ForeColor = System.Drawing.Color.White;
-            this.spfileCheckBox.Location = new System.Drawing.Point(174, 360);
+            this.spfileCheckBox.Location = new System.Drawing.Point(261, 554);
+            this.spfileCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.spfileCheckBox.Name = "spfileCheckBox";
-            this.spfileCheckBox.Size = new System.Drawing.Size(61, 20);
+            this.spfileCheckBox.Size = new System.Drawing.Size(87, 29);
             this.spfileCheckBox.TabIndex = 34;
             this.spfileCheckBox.Text = "Spfile";
             this.spfileCheckBox.UseVisualStyleBackColor = true;
@@ -291,10 +295,11 @@ namespace Strategy_Manager
             this.tablespaces.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tablespaces.ForeColor = System.Drawing.Color.Black;
             this.tablespaces.FormattingEnabled = true;
-            this.tablespaces.ItemHeight = 16;
-            this.tablespaces.Location = new System.Drawing.Point(184, 416);
+            this.tablespaces.ItemHeight = 25;
+            this.tablespaces.Location = new System.Drawing.Point(276, 640);
+            this.tablespaces.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tablespaces.Name = "tablespaces";
-            this.tablespaces.Size = new System.Drawing.Size(120, 96);
+            this.tablespaces.Size = new System.Drawing.Size(180, 125);
             this.tablespaces.TabIndex = 36;
             this.tablespaces.MouseClick += new System.Windows.Forms.MouseEventHandler(this.click_tablespace);
             // 
@@ -304,9 +309,10 @@ namespace Strategy_Manager
             this.tablespacesList.Enabled = false;
             this.tablespacesList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tablespacesList.ForeColor = System.Drawing.Color.White;
-            this.tablespacesList.Location = new System.Drawing.Point(171, 392);
+            this.tablespacesList.Location = new System.Drawing.Point(256, 603);
+            this.tablespacesList.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tablespacesList.Name = "tablespacesList";
-            this.tablespacesList.Size = new System.Drawing.Size(89, 16);
+            this.tablespacesList.Size = new System.Drawing.Size(125, 25);
             this.tablespacesList.TabIndex = 37;
             this.tablespacesList.Text = "Tablespaces";
             // 
@@ -318,10 +324,11 @@ namespace Strategy_Manager
             this.backupTablespaces.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backupTablespaces.ForeColor = System.Drawing.Color.Black;
             this.backupTablespaces.FormattingEnabled = true;
-            this.backupTablespaces.ItemHeight = 16;
-            this.backupTablespaces.Location = new System.Drawing.Point(380, 416);
+            this.backupTablespaces.ItemHeight = 25;
+            this.backupTablespaces.Location = new System.Drawing.Point(570, 640);
+            this.backupTablespaces.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.backupTablespaces.Name = "backupTablespaces";
-            this.backupTablespaces.Size = new System.Drawing.Size(120, 96);
+            this.backupTablespaces.Size = new System.Drawing.Size(180, 125);
             this.backupTablespaces.TabIndex = 38;
             this.backupTablespaces.MouseClick += new System.Windows.Forms.MouseEventHandler(this.click_tablespaceRespaldo);
             // 
@@ -357,9 +364,10 @@ namespace Strategy_Manager
             "22",
             "23",
             "24\t"});
-            this.LH.Location = new System.Drawing.Point(616, 153);
+            this.LH.Location = new System.Drawing.Point(924, 235);
+            this.LH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LH.Name = "LH";
-            this.LH.Size = new System.Drawing.Size(38, 21);
+            this.LH.Size = new System.Drawing.Size(55, 28);
             this.LH.TabIndex = 39;
             // 
             // ML
@@ -433,78 +441,107 @@ namespace Strategy_Manager
             "",
             "",
             ""});
-            this.ML.Location = new System.Drawing.Point(676, 154);
+            this.ML.Location = new System.Drawing.Point(1014, 237);
+            this.ML.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ML.Name = "ML";
-            this.ML.Size = new System.Drawing.Size(41, 21);
+            this.ML.Size = new System.Drawing.Size(60, 28);
             this.ML.TabIndex = 40;
             // 
             // Lunes
             // 
             this.Lunes.AutoSize = true;
-            this.Lunes.Location = new System.Drawing.Point(512, 160);
+            this.Lunes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lunes.ForeColor = System.Drawing.Color.White;
+            this.Lunes.Location = new System.Drawing.Point(768, 237);
+            this.Lunes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Lunes.Name = "Lunes";
-            this.Lunes.Size = new System.Drawing.Size(15, 14);
+            this.Lunes.Size = new System.Drawing.Size(106, 29);
             this.Lunes.TabIndex = 53;
+            this.Lunes.Text = "Sunday";
             this.Lunes.UseVisualStyleBackColor = true;
             this.Lunes.CheckedChanged += new System.EventHandler(this.Lunes_CheckedChanged);
             // 
             // Martes
             // 
             this.Martes.AutoSize = true;
-            this.Martes.Location = new System.Drawing.Point(512, 188);
+            this.Martes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Martes.ForeColor = System.Drawing.Color.White;
+            this.Martes.Location = new System.Drawing.Point(768, 277);
+            this.Martes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Martes.Name = "Martes";
-            this.Martes.Size = new System.Drawing.Size(15, 14);
+            this.Martes.Size = new System.Drawing.Size(109, 29);
             this.Martes.TabIndex = 54;
+            this.Martes.Text = "Monday";
             this.Martes.UseVisualStyleBackColor = true;
             this.Martes.CheckedChanged += new System.EventHandler(this.Martes_CheckedChanged);
             // 
             // Jueves
             // 
             this.Jueves.AutoSize = true;
-            this.Jueves.Location = new System.Drawing.Point(512, 243);
+            this.Jueves.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Jueves.ForeColor = System.Drawing.Color.White;
+            this.Jueves.Location = new System.Drawing.Point(768, 362);
+            this.Jueves.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Jueves.Name = "Jueves";
-            this.Jueves.Size = new System.Drawing.Size(15, 14);
+            this.Jueves.Size = new System.Drawing.Size(144, 29);
             this.Jueves.TabIndex = 55;
+            this.Jueves.Text = "Wednesday";
             this.Jueves.UseVisualStyleBackColor = true;
             this.Jueves.CheckedChanged += new System.EventHandler(this.Jueves_CheckedChanged);
             // 
             // Miercoles
             // 
             this.Miercoles.AutoSize = true;
-            this.Miercoles.Location = new System.Drawing.Point(512, 215);
+            this.Miercoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Miercoles.ForeColor = System.Drawing.Color.White;
+            this.Miercoles.Location = new System.Drawing.Point(768, 319);
+            this.Miercoles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Miercoles.Name = "Miercoles";
-            this.Miercoles.Size = new System.Drawing.Size(15, 14);
+            this.Miercoles.Size = new System.Drawing.Size(115, 29);
             this.Miercoles.TabIndex = 56;
+            this.Miercoles.Text = "Tuesday";
             this.Miercoles.UseVisualStyleBackColor = true;
             this.Miercoles.CheckedChanged += new System.EventHandler(this.Miercoles_CheckedChanged);
             // 
             // Viernes
             // 
             this.Viernes.AutoSize = true;
-            this.Viernes.Location = new System.Drawing.Point(512, 270);
+            this.Viernes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Viernes.ForeColor = System.Drawing.Color.White;
+            this.Viernes.Location = new System.Drawing.Point(768, 403);
+            this.Viernes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Viernes.Name = "Viernes";
-            this.Viernes.Size = new System.Drawing.Size(15, 14);
+            this.Viernes.Size = new System.Drawing.Size(121, 29);
             this.Viernes.TabIndex = 57;
+            this.Viernes.Text = "Thursday";
             this.Viernes.UseVisualStyleBackColor = true;
             this.Viernes.CheckedChanged += new System.EventHandler(this.Viernes_CheckedChanged);
             // 
             // Sabado
             // 
             this.Sabado.AutoSize = true;
-            this.Sabado.Location = new System.Drawing.Point(512, 296);
+            this.Sabado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sabado.ForeColor = System.Drawing.Color.White;
+            this.Sabado.Location = new System.Drawing.Point(768, 445);
+            this.Sabado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Sabado.Name = "Sabado";
-            this.Sabado.Size = new System.Drawing.Size(15, 14);
+            this.Sabado.Size = new System.Drawing.Size(92, 29);
             this.Sabado.TabIndex = 58;
+            this.Sabado.Text = "Friday";
             this.Sabado.UseVisualStyleBackColor = true;
             this.Sabado.CheckedChanged += new System.EventHandler(this.Sabado_CheckedChanged);
             // 
             // Domingo
             // 
             this.Domingo.AutoSize = true;
-            this.Domingo.Location = new System.Drawing.Point(512, 323);
+            this.Domingo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Domingo.ForeColor = System.Drawing.Color.White;
+            this.Domingo.Location = new System.Drawing.Point(768, 486);
+            this.Domingo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Domingo.Name = "Domingo";
-            this.Domingo.Size = new System.Drawing.Size(15, 14);
+            this.Domingo.Size = new System.Drawing.Size(117, 29);
             this.Domingo.TabIndex = 59;
+            this.Domingo.Text = "Saturday";
             this.Domingo.UseVisualStyleBackColor = true;
             this.Domingo.CheckedChanged += new System.EventHandler(this.Domingo_CheckedChanged);
             // 
@@ -540,9 +577,10 @@ namespace Strategy_Manager
             "22",
             "23",
             "24\t"});
-            this.MH.Location = new System.Drawing.Point(616, 180);
+            this.MH.Location = new System.Drawing.Point(924, 277);
+            this.MH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MH.Name = "MH";
-            this.MH.Size = new System.Drawing.Size(38, 21);
+            this.MH.Size = new System.Drawing.Size(55, 28);
             this.MH.TabIndex = 60;
             // 
             // DH
@@ -577,9 +615,10 @@ namespace Strategy_Manager
             "22",
             "23",
             "24\t"});
-            this.DH.Location = new System.Drawing.Point(616, 316);
+            this.DH.Location = new System.Drawing.Point(924, 486);
+            this.DH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DH.Name = "DH";
-            this.DH.Size = new System.Drawing.Size(38, 21);
+            this.DH.Size = new System.Drawing.Size(55, 28);
             this.DH.TabIndex = 61;
             // 
             // SH
@@ -614,9 +653,10 @@ namespace Strategy_Manager
             "22",
             "23",
             "24\t"});
-            this.SH.Location = new System.Drawing.Point(616, 289);
+            this.SH.Location = new System.Drawing.Point(924, 445);
+            this.SH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SH.Name = "SH";
-            this.SH.Size = new System.Drawing.Size(38, 21);
+            this.SH.Size = new System.Drawing.Size(55, 28);
             this.SH.TabIndex = 62;
             // 
             // VH
@@ -651,9 +691,10 @@ namespace Strategy_Manager
             "22",
             "23",
             "24\t"});
-            this.VH.Location = new System.Drawing.Point(616, 262);
+            this.VH.Location = new System.Drawing.Point(924, 403);
+            this.VH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.VH.Name = "VH";
-            this.VH.Size = new System.Drawing.Size(38, 21);
+            this.VH.Size = new System.Drawing.Size(55, 28);
             this.VH.TabIndex = 63;
             // 
             // JH
@@ -688,9 +729,10 @@ namespace Strategy_Manager
             "22",
             "23",
             "24\t"});
-            this.JH.Location = new System.Drawing.Point(616, 235);
+            this.JH.Location = new System.Drawing.Point(924, 362);
+            this.JH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.JH.Name = "JH";
-            this.JH.Size = new System.Drawing.Size(38, 21);
+            this.JH.Size = new System.Drawing.Size(55, 28);
             this.JH.TabIndex = 64;
             // 
             // IH
@@ -725,9 +767,10 @@ namespace Strategy_Manager
             "22",
             "23",
             "24\t"});
-            this.IH.Location = new System.Drawing.Point(616, 207);
+            this.IH.Location = new System.Drawing.Point(924, 318);
+            this.IH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.IH.Name = "IH";
-            this.IH.Size = new System.Drawing.Size(38, 21);
+            this.IH.Size = new System.Drawing.Size(55, 28);
             this.IH.TabIndex = 65;
             // 
             // MD
@@ -801,9 +844,10 @@ namespace Strategy_Manager
             "",
             "",
             ""});
-            this.MD.Location = new System.Drawing.Point(676, 316);
+            this.MD.Location = new System.Drawing.Point(1014, 486);
+            this.MD.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MD.Name = "MD";
-            this.MD.Size = new System.Drawing.Size(41, 21);
+            this.MD.Size = new System.Drawing.Size(60, 28);
             this.MD.TabIndex = 66;
             // 
             // MS
@@ -877,9 +921,10 @@ namespace Strategy_Manager
             "",
             "",
             ""});
-            this.MS.Location = new System.Drawing.Point(676, 289);
+            this.MS.Location = new System.Drawing.Point(1014, 445);
+            this.MS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MS.Name = "MS";
-            this.MS.Size = new System.Drawing.Size(41, 21);
+            this.MS.Size = new System.Drawing.Size(60, 28);
             this.MS.TabIndex = 67;
             // 
             // MV
@@ -953,9 +998,10 @@ namespace Strategy_Manager
             "",
             "",
             ""});
-            this.MV.Location = new System.Drawing.Point(676, 262);
+            this.MV.Location = new System.Drawing.Point(1014, 403);
+            this.MV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MV.Name = "MV";
-            this.MV.Size = new System.Drawing.Size(41, 21);
+            this.MV.Size = new System.Drawing.Size(60, 28);
             this.MV.TabIndex = 68;
             // 
             // MJ
@@ -1029,9 +1075,10 @@ namespace Strategy_Manager
             "",
             "",
             ""});
-            this.MJ.Location = new System.Drawing.Point(676, 235);
+            this.MJ.Location = new System.Drawing.Point(1014, 362);
+            this.MJ.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MJ.Name = "MJ";
-            this.MJ.Size = new System.Drawing.Size(41, 21);
+            this.MJ.Size = new System.Drawing.Size(60, 28);
             this.MJ.TabIndex = 69;
             // 
             // MI
@@ -1105,9 +1152,10 @@ namespace Strategy_Manager
             "",
             "",
             ""});
-            this.MI.Location = new System.Drawing.Point(676, 208);
+            this.MI.Location = new System.Drawing.Point(1014, 320);
+            this.MI.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MI.Name = "MI";
-            this.MI.Size = new System.Drawing.Size(41, 21);
+            this.MI.Size = new System.Drawing.Size(60, 28);
             this.MI.TabIndex = 70;
             // 
             // MM
@@ -1181,149 +1229,56 @@ namespace Strategy_Manager
             "",
             "",
             ""});
-            this.MM.Location = new System.Drawing.Point(676, 180);
+            this.MM.Location = new System.Drawing.Point(1014, 277);
+            this.MM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MM.Name = "MM";
-            this.MM.Size = new System.Drawing.Size(41, 21);
+            this.MM.Size = new System.Drawing.Size(60, 28);
             this.MM.TabIndex = 71;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(540, 156);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 20);
-            this.label1.TabIndex = 72;
-            this.label1.Text = "Lunes";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(532, 317);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 20);
-            this.label2.TabIndex = 73;
-            this.label2.Text = "Domingo";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(540, 291);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 20);
-            this.label3.TabIndex = 74;
-            this.label3.Text = "Sabado";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(540, 236);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 20);
-            this.label4.TabIndex = 75;
-            this.label4.Text = "Jueves";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(540, 264);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 20);
-            this.label5.TabIndex = 76;
-            this.label5.Text = "Viernes";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(532, 210);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 20);
-            this.label6.TabIndex = 77;
-            this.label6.Text = "Miercoles";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(540, 182);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 20);
-            this.label7.TabIndex = 78;
-            this.label7.Text = "Martes";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(546, 118);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(791, 186);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 20);
+            this.label8.Size = new System.Drawing.Size(57, 25);
             this.label8.TabIndex = 79;
             this.label8.Text = "Days";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(615, 118);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(922, 182);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 20);
+            this.label9.Size = new System.Drawing.Size(54, 25);
             this.label9.TabIndex = 80;
             this.label9.Text = "Hour";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(663, 118);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(994, 182);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 20);
+            this.label10.Size = new System.Drawing.Size(81, 25);
             this.label10.TabIndex = 81;
             this.label10.Text = "Minutes";
             // 
             // CrearEstrategia
             // 
             this.AcceptButton = this.button1;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(816, 586);
+            this.ClientSize = new System.Drawing.Size(1215, 875);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.MM);
             this.Controls.Add(this.MI);
             this.Controls.Add(this.MJ);
@@ -1364,10 +1319,11 @@ namespace Strategy_Manager
             this.Controls.Add(this.picture);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(832, 625);
+            this.MaximumSize = new System.Drawing.Size(1237, 931);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(832, 625);
+            this.MinimumSize = new System.Drawing.Size(1237, 931);
             this.Name = "CrearEstrategia";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -1517,7 +1473,7 @@ namespace Strategy_Manager
                 int cont = 0;
                 foreach (string scriptline in backupScript)
                 {
-                    insertStrategiesLines(idstrategy, scriptline,cont);
+                    insertStrategiesLines(idstrategy, cont, scriptline);
                     cont++;
                 }
             }
@@ -1559,7 +1515,7 @@ namespace Strategy_Manager
             }
         }
 
-        public void insertStrategiesLines(String idstrategy, String line,int nline)
+        public void insertStrategiesLines(String idstrategy, int nline, String line)
         {
             using (OracleConnection objConn = new OracleConnection(ConfigurationManager.AppSettings["connectionString"]))
             {
@@ -1569,8 +1525,8 @@ namespace Strategy_Manager
                 objCmd.CommandType = CommandType.StoredProcedure;
 
                 objCmd.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, idstrategy, ParameterDirection.Input));
-                objCmd.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, line, ParameterDirection.Input));
-                objCmd.Parameters.Add(new OracleParameter("3", OracleDbType.Decimal, nline, ParameterDirection.Input));
+                objCmd.Parameters.Add(new OracleParameter("2", OracleDbType.Decimal, nline, ParameterDirection.Input));
+                objCmd.Parameters.Add(new OracleParameter("3", OracleDbType.Varchar2, line, ParameterDirection.Input));
                 try
                 {
                     objConn.Open();
@@ -1794,13 +1750,6 @@ namespace Strategy_Manager
         private System.Windows.Forms.ComboBox MJ;
         private System.Windows.Forms.ComboBox MI;
         private System.Windows.Forms.ComboBox MM;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;

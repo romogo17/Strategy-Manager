@@ -246,12 +246,12 @@ namespace Strategy_Manager
                     objCmd.ExecuteNonQuery();
                     app.solicitaBases();
                     this.Close();
-                    System.Windows.Forms.MessageBox.Show("Base de datos Registrada correctamente");
+                    System.Windows.Forms.MessageBox.Show("Database connection register successfully");
 
                 }
                 catch (Exception ex)
                 {
-                    System.Windows.Forms.MessageBox.Show("Esa base de Datos ya esta registrada");
+                    System.Windows.Forms.MessageBox.Show("Error");
                 }
 
                 objConn.Close();
