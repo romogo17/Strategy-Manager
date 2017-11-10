@@ -1,4 +1,4 @@
-﻿namespace Oracle_Tablespace_Monitor
+﻿namespace Strategy_Manager
 {
     using System;
     using System.Windows.Forms;
@@ -73,14 +73,14 @@
             this.registrarBaseDatosToolStripMenuItem,
             this.editarBaseDeDatosToolStripMenuItem});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
+            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.opcionesToolStripMenuItem.Text = "Options";
             // 
             // registrarBaseDatosToolStripMenuItem
             // 
             this.registrarBaseDatosToolStripMenuItem.Name = "registrarBaseDatosToolStripMenuItem";
             this.registrarBaseDatosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
-            this.registrarBaseDatosToolStripMenuItem.Size = new System.Drawing.Size(302, 30);
+            this.registrarBaseDatosToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.registrarBaseDatosToolStripMenuItem.Text = "Register Database";
             this.registrarBaseDatosToolStripMenuItem.Click += new System.EventHandler(this.registrarBaseDatosToolStripMenuItem_click);
             // 
@@ -88,7 +88,7 @@
             // 
             this.editarBaseDeDatosToolStripMenuItem.Name = "editarBaseDeDatosToolStripMenuItem";
             this.editarBaseDeDatosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.K)));
-            this.editarBaseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(302, 30);
+            this.editarBaseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.editarBaseDeDatosToolStripMenuItem.Text = "Edit Database";
             this.editarBaseDeDatosToolStripMenuItem.Click += new System.EventHandler(this.editarBaseDatosToolStripMenuItem_click);
             // 
@@ -100,8 +100,7 @@
             this.opcionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1227, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(818, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -109,9 +108,10 @@
             // 
             this.myLayout.AutoScroll = true;
             this.myLayout.Controls.Add(this.dataGridView1);
-            this.myLayout.Location = new System.Drawing.Point(50, 177);
+            this.myLayout.Location = new System.Drawing.Point(33, 115);
+            this.myLayout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.myLayout.Name = "myLayout";
-            this.myLayout.Size = new System.Drawing.Size(1136, 503);
+            this.myLayout.Size = new System.Drawing.Size(757, 327);
             this.myLayout.TabIndex = 17;
             // 
             // dataGridView1
@@ -144,9 +144,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.GridColor = System.Drawing.Color.Black;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 5);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dataGridView1.MaximumSize = new System.Drawing.Size(992, 188);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.MaximumSize = new System.Drawing.Size(661, 122);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -163,7 +162,7 @@
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(992, 188);
+            this.dataGridView1.Size = new System.Drawing.Size(661, 122);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
@@ -172,25 +171,25 @@
             this.mainTitle.AutoSize = true;
             this.mainTitle.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mainTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.mainTitle.Location = new System.Drawing.Point(36, 80);
+            this.mainTitle.Location = new System.Drawing.Point(24, 52);
+            this.mainTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.mainTitle.Name = "mainTitle";
-            this.mainTitle.Size = new System.Drawing.Size(635, 83);
+            this.mainTitle.Size = new System.Drawing.Size(425, 57);
             this.mainTitle.TabIndex = 18;
             this.mainTitle.Text = "Database Connections";
             // 
             // Application
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.ClientSize = new System.Drawing.Size(1227, 709);
+            this.ClientSize = new System.Drawing.Size(818, 461);
             this.Controls.Add(this.mainTitle);
             this.Controls.Add(this.myLayout);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "Application";
             this.Opacity = 0.8D;

@@ -3,7 +3,7 @@ using System;
 using System.Configuration;
 using System.Data;
 
-namespace Oracle_Tablespace_Monitor
+namespace Strategy_Manager
 {
     partial class EditarBase
     {
@@ -55,10 +55,9 @@ namespace Oracle_Tablespace_Monitor
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(45, 278);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(30, 181);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 29);
+            this.label1.Size = new System.Drawing.Size(55, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Server";
             this.label1.UseMnemonic = false;
@@ -68,10 +67,9 @@ namespace Oracle_Tablespace_Monitor
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(45, 318);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(30, 207);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(181, 29);
+            this.label2.Size = new System.Drawing.Size(123, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Database name";
             this.label2.UseMnemonic = false;
@@ -81,10 +79,9 @@ namespace Oracle_Tablespace_Monitor
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(45, 366);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(30, 238);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 29);
+            this.label3.Size = new System.Drawing.Size(87, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "IP Address";
             this.label3.UseMnemonic = false;
@@ -94,19 +91,17 @@ namespace Oracle_Tablespace_Monitor
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label4.Location = new System.Drawing.Point(45, 412);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(30, 268);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 29);
+            this.label4.Size = new System.Drawing.Size(38, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Port";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(324, 545);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(216, 354);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 35);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
@@ -115,10 +110,9 @@ namespace Oracle_Tablespace_Monitor
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(442, 545);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Location = new System.Drawing.Point(295, 354);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 35);
+            this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 3;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
@@ -126,34 +120,30 @@ namespace Oracle_Tablespace_Monitor
             // 
             // baseDatos
             // 
-            this.baseDatos.Location = new System.Drawing.Point(359, 321);
-            this.baseDatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.baseDatos.Location = new System.Drawing.Point(239, 209);
             this.baseDatos.Name = "baseDatos";
-            this.baseDatos.Size = new System.Drawing.Size(148, 26);
+            this.baseDatos.Size = new System.Drawing.Size(100, 20);
             this.baseDatos.TabIndex = 5;
             // 
             // ip_base
             // 
-            this.ip_base.Location = new System.Drawing.Point(359, 366);
-            this.ip_base.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ip_base.Location = new System.Drawing.Point(239, 238);
             this.ip_base.Name = "ip_base";
-            this.ip_base.Size = new System.Drawing.Size(148, 26);
+            this.ip_base.Size = new System.Drawing.Size(100, 20);
             this.ip_base.TabIndex = 8;
             // 
             // puerto
             // 
-            this.puerto.Location = new System.Drawing.Point(359, 415);
-            this.puerto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.puerto.Location = new System.Drawing.Point(239, 270);
             this.puerto.Name = "puerto";
-            this.puerto.Size = new System.Drawing.Size(148, 26);
+            this.puerto.Size = new System.Drawing.Size(100, 20);
             this.puerto.TabIndex = 9;
             // 
             // pictureBox
             // 
             this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
             this.pictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.InitialImage")));
-            this.pictureBox.Location = new System.Drawing.Point(189, 52);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox.Location = new System.Drawing.Point(126, 34);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(150, 150);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -162,19 +152,17 @@ namespace Oracle_Tablespace_Monitor
             // 
             // nombreServidor
             // 
-            this.nombreServidor.Location = new System.Drawing.Point(359, 278);
-            this.nombreServidor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nombreServidor.Location = new System.Drawing.Point(239, 181);
             this.nombreServidor.Name = "nombreServidor";
-            this.nombreServidor.Size = new System.Drawing.Size(148, 26);
+            this.nombreServidor.Size = new System.Drawing.Size(100, 20);
             this.nombreServidor.TabIndex = 4;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(359, 456);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.checkBox1.Location = new System.Drawing.Point(239, 296);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(22, 21);
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 10;
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
@@ -183,22 +171,20 @@ namespace Oracle_Tablespace_Monitor
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.Control;
-            this.label11.Location = new System.Drawing.Point(45, 456);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(30, 296);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(177, 29);
+            this.label11.Size = new System.Drawing.Size(118, 20);
             this.label11.TabIndex = 11;
             this.label11.Text = "Active/Deactive";
             // 
             // EditarBase
             // 
             this.AcceptButton = this.button1;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(567, 606);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(382, 405);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.button2);
@@ -213,11 +199,11 @@ namespace Oracle_Tablespace_Monitor
             this.Controls.Add(this.ip_base);
             this.Controls.Add(this.puerto);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(589, 662);
+            this.MaximumSize = new System.Drawing.Size(398, 444);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(589, 662);
+            this.MinimumSize = new System.Drawing.Size(398, 444);
             this.Name = "EditarBase";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

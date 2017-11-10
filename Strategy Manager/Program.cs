@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Oracle_Tablespace_Monitor
+namespace Strategy_Manager
 {
     using LiveCharts; //Core of the library
     using LiveCharts.Wpf; //The WPF controls

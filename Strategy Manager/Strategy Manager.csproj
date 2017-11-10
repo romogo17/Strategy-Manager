@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{BF87FDAB-4BBE-448B-A4B2-A761D116C34B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Oracle_Tablespace_Monitor</RootNamespace>
-    <AssemblyName>Oracle Tablespace Monitor</AssemblyName>
+    <RootNamespace>Strategy_Manager</RootNamespace>
+    <AssemblyName>Strategy Manager</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -215,6 +215,7 @@
   <ItemGroup>
     <Content Include="icon.ico" />
     <Content Include="querys.sql" />
+    <None Include="SplashImage.png" />
     <None Include="OraTbspMonitorLoading.png" />
   </ItemGroup>
   <ItemGroup>

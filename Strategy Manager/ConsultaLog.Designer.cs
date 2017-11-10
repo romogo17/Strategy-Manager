@@ -1,4 +1,4 @@
-﻿namespace Oracle_Tablespace_Monitor
+﻿namespace Strategy_Manager
 {
     using System;
     using System.Windows.Forms;

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 
-namespace Oracle_Tablespace_Monitor
+namespace Strategy_Manager
 {
     partial class CrearEstrategia
     {
@@ -319,7 +319,6 @@ namespace Oracle_Tablespace_Monitor
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(816, 586);
-            this.ControlBox = false;
             this.Controls.Add(this.backupTablespaces);
             this.Controls.Add(this.tablespacesList);
             this.Controls.Add(this.tablespaces);

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Oracle_Tablespace_Monitor
+namespace Strategy_Manager
 {
     public class MeasureModel
     {

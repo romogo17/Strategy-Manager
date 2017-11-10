@@ -14,7 +14,7 @@ using System.Windows.Media;
 using LiveCharts.Wpf;
 using Brushes = System.Windows.Media.Brushes;
 
-namespace Oracle_Tablespace_Monitor
+namespace Strategy_Manager
 {
     public partial class ConsultaLog : Form
     {

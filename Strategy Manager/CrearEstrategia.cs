@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Oracle_Tablespace_Monitor
+namespace Strategy_Manager
 {
     public partial class CrearEstrategia : Form
     {

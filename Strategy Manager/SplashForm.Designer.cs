@@ -1,4 +1,4 @@
-﻿namespace Oracle_Tablespace_Monitor
+﻿namespace Strategy_Manager
 {
     partial class SplashForm
     {

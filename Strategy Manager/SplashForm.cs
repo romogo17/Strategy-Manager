@@ -1,4 +1,4 @@
-﻿using Oracle_Tablespace_Monitor.Properties;
+﻿using Strategy_Manager.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Oracle_Tablespace_Monitor
+namespace Strategy_Manager
 {
     public partial class SplashForm : Form
     {
@@ -23,7 +23,7 @@ namespace Oracle_Tablespace_Monitor
 
             spashPictureBox = new PictureBox
             {
-                Image = Resources.OraTbspMonitorLoading,
+                Image = Resources.SplashImage,
                 SizeMode = PictureBoxSizeMode.StretchImage,
                 Dock = DockStyle.Fill
             };
