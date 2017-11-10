@@ -216,7 +216,7 @@ namespace Strategy_Manager
                 OracleCommand objCmd = new OracleCommand();
                 objCmd.Connection = objConn;
                 objCmd.CommandType = CommandType.Text;
-                objCmd.CommandText = "create database link " + "C_"+ nombreServidor.Text + baseDatos.Text +"\n" +
+                objCmd.CommandText = "create database link " + "C_" + nombreServidor.Text + baseDatos.Text + "\n" +
                                        "connect to SYSTEM identified by MANAGER \n" +
                                         "using \n" +
                                        "'(DESCRIPTION = \n" +
@@ -226,7 +226,7 @@ namespace Strategy_Manager
                                         "(SERVICE_NAME = XE) \n " +
                                         ") \n" +
                                         ")' \n ";
-  
+
                 OracleCommand objCmd2 = new OracleCommand();
                 objCmd2.Connection = objConn;
                 objCmd2.CommandText = "insert_connection";
@@ -237,7 +237,7 @@ namespace Strategy_Manager
                 objCmd2.Parameters.Add(new OracleParameter("3", OracleDbType.Varchar2, baseDatos.Text, ParameterDirection.Input));
                 objCmd2.Parameters.Add(new OracleParameter("4", OracleDbType.Varchar2, ip_base.Text, ParameterDirection.Input));
                 objCmd2.Parameters.Add(new OracleParameter("5", OracleDbType.Varchar2, puerto_base.Text, ParameterDirection.Input));
-                objCmd2.Parameters.Add(new OracleParameter("6", OracleDbType.Decimal,1, ParameterDirection.Input));
+                objCmd2.Parameters.Add(new OracleParameter("6", OracleDbType.Decimal, 1, ParameterDirection.Input));
 
                 try
                 {
@@ -245,7 +245,9 @@ namespace Strategy_Manager
                     objCmd2.ExecuteNonQuery();
                     objCmd.ExecuteNonQuery();
                     app.solicitaBases();
+                    remoteConection();
                     this.Close();
+                    
                     System.Windows.Forms.MessageBox.Show("Database connection register successfully");
 
                 }
@@ -263,6 +265,40 @@ namespace Strategy_Manager
         {
             this.Close();
             //this.Dispose();
+        }
+        private void remoteConection()
+        {
+            using (OracleConnection objConn = new OracleConnection(ConfigurationManager.AppSettings["connectionString"]))
+            {
+               
+                OracleCommand objCmd2 = new OracleCommand();
+                objCmd2.Connection = objConn;
+                String generaId = "C_" + nombreServidor.Text + baseDatos.Text;
+                objCmd2.CommandText = "insert into connection@" +generaId+" values(:1,:2,:3,:4,:5,:6)";
+                objCmd2.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, generaId, ParameterDirection.Input));
+                objCmd2.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, nombreServidor.Text, ParameterDirection.Input));
+                objCmd2.Parameters.Add(new OracleParameter("3", OracleDbType.Varchar2, baseDatos.Text, ParameterDirection.Input));
+                objCmd2.Parameters.Add(new OracleParameter("4", OracleDbType.Varchar2, ip_base.Text, ParameterDirection.Input));
+                objCmd2.Parameters.Add(new OracleParameter("5", OracleDbType.Varchar2, puerto_base.Text, ParameterDirection.Input));
+                objCmd2.Parameters.Add(new OracleParameter("6", OracleDbType.Decimal, 1, ParameterDirection.Input));
+
+                try
+                {
+                    objConn.Open();
+                    objCmd2.ExecuteNonQuery();
+                    app.solicitaBases();
+                    this.Close();
+                   // System.Windows.Forms.MessageBox.Show("Database connection register successfully");
+
+                }
+                catch (Exception ex)
+                {
+                   // System.Windows.Forms.MessageBox.Show("Error");
+                }
+
+                objConn.Close();
+                objConn.Dispose();
+            }
         }
     }
 }

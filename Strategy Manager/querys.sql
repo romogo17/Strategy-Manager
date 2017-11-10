@@ -159,17 +159,15 @@ create or replace function get_log(strategy in varchar2)
      RETURN cr;
    END;
 /
---Estructura Scripts
---BACKUP CURRENT CONTROLFILE              Control
---BACKUP SPFILE                           spfile
---BACKUP ARCHIVELOG ALL           		  LOGS
---BACKUP TABLESPACE NOMBRE_TABLESPACE     TABLESPACE
-
---BACKUP DATABASE                         TODOS LOS DATAFILES //incluye control y pfile
-
---BACKUP INCREMENTAL LEVEL 1 DATABASE;    INCREMENTAL         //incluye control y pfile
---BACKUP INCREMENTAL LEVEL 0 DATABASE;	  INCREMENTAL		  //incluye control y pfile
-
+--Function para conseguir los errores de las estrategias
+create or replace function get_Error(strategy in varchar2)
+   return SYS_REFCURSOR IS
+   cr SYS_REFCURSOR;
+    BEGIN
+     OPEN cr FOR SELECT * from error STRATEGY WHERE strategy_id =strategy ;
+     RETURN cr;
+   END;
+/
 CREATE OR REPLACE PROCEDURE insert_strategyline(strategy_id in varchar2, nline in int, line in varchar2)
   IS
   BEGIN
@@ -180,3 +178,37 @@ CREATE OR REPLACE PROCEDURE insert_strategyline(strategy_id in varchar2, nline i
      WHEN OTHERS THEN ROLLBACK;
   END;
 /
+--Procedimiento para insertar una lineaEstrategiaRemota (No sirve)
+CREATE OR REPLACE PROCEDURE insert_strategyline(strategy_id in varchar2, nline in int, line in varchar2)
+  IS
+  varchar2 D:='insert into strategy_line@' ||  values (strategy_id, nline, line);
+  BEGIN
+    insert into strategy_line(strategy_id,numline,line) values (strategy_id, nline, line);
+    COMMIT;
+
+    EXCEPTION
+     WHEN OTHERS THEN ROLLBACK;
+  END;
+/
+--Procedimiento para insertar una estrategiaRemota (No sirve)
+CREATE OR REPLACE PROCEDURE insert_strategyRemote(name in varchar2, connection in varchar2, priori in varchar2)
+   IS
+    D varchar2(1000);
+   BEGIN
+      D := 'insert into strategy@' || connection || ' values (' || name || ',' || connection || ',' || priori || ')';
+      Execute  immediate D;
+	  COMMIT;
+      EXCEPTION
+       WHEN OTHERS THEN ROLLBACK;
+END;
+/
+--Estructura Scripts
+--BACKUP CURRENT CONTROLFILE              Control
+--BACKUP SPFILE                           spfile
+--BACKUP ARCHIVELOG ALL           		  LOGS
+--BACKUP TABLESPACE NOMBRE_TABLESPACE     TABLESPACE
+
+--BACKUP DATABASE                         TODOS LOS DATAFILES //incluye control y pfile
+
+--BACKUP INCREMENTAL LEVEL 1 DATABASE;    INCREMENTAL         //incluye control y pfile
+--BACKUP INCREMENTAL LEVEL 0 DATABASE;	  INCREMENTAL		  //incluye control y pfile

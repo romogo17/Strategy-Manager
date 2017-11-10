@@ -252,9 +252,9 @@
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int index = dataGridView1.CurrentCell.RowIndex;
+           
             String idEstrategia="";
-            if (index>= 0) {
+            if (e.RowIndex>=0) {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                 idEstrategia = row.Cells["STRATEGY_ID"].Value.ToString();
                 ListaLogs lista = new ListaLogs(idEstrategia);

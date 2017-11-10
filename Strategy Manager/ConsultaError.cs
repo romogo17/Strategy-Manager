@@ -16,15 +16,14 @@ using Brushes = System.Windows.Media.Brushes;
 
 namespace Strategy_Manager
 {
-    public partial class ListaLogs : Form
+    public partial class ConsultaError : Form
     {
-        public ListaLogs(String estrategia)
+        public ConsultaError(String estrategia,String momento,String error)
         {
             InitializeComponent();
-            strategy.Text = "Strategy : " + estrategia;
-            solicitaLogs(estrategia);
-            solicitaError(estrategia);
-       
+            logId.Text = "Log: "+estrategia;
+            logDate.Text = "Date: " + momento;
+            logDescrip.Text = error;       
         }
 
     }
