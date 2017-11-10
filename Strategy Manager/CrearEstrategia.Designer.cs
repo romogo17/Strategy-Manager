@@ -43,7 +43,7 @@ namespace Strategy_Manager
             this.typeBackup = new System.Windows.Forms.Label();
             this.strategiesTitle = new System.Windows.Forms.Label();
             this.fullBackupCB = new System.Windows.Forms.CheckBox();
-            this.fullBackUpARCHIVE_CB = new System.Windows.Forms.CheckBox();
+            this.ARCHIVE_CB = new System.Windows.Forms.CheckBox();
             this.incrementalBackupCB = new System.Windows.Forms.CheckBox();
             this.level0 = new System.Windows.Forms.RadioButton();
             this.level1 = new System.Windows.Forms.RadioButton();
@@ -51,7 +51,6 @@ namespace Strategy_Manager
             this.partialBackupCB = new System.Windows.Forms.CheckBox();
             this.controlCheckBox = new System.Windows.Forms.CheckBox();
             this.spfileCheckBox = new System.Windows.Forms.CheckBox();
-            this.logsCheckBox = new System.Windows.Forms.CheckBox();
             this.tablespaces = new System.Windows.Forms.ListBox();
             this.tablespacesList = new System.Windows.Forms.Label();
             this.backupTablespaces = new System.Windows.Forms.ListBox();
@@ -83,7 +82,7 @@ namespace Strategy_Manager
             // picture
             // 
             this.picture.Image = ((System.Drawing.Image)(resources.GetObject("picture.Image")));
-            this.picture.Location = new System.Drawing.Point(310, 448);
+            this.picture.Location = new System.Drawing.Point(310, 434);
             this.picture.Name = "picture";
             this.picture.Size = new System.Drawing.Size(64, 64);
             this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -150,18 +149,18 @@ namespace Strategy_Manager
             this.fullBackupCB.UseVisualStyleBackColor = true;
             this.fullBackupCB.CheckedChanged += new System.EventHandler(this.fullBackupCB_Change);
             // 
-            // fullBackUpARCHIVE_CB
+            // ARCHIVE_CB
             // 
-            this.fullBackUpARCHIVE_CB.AutoSize = true;
-            this.fullBackUpARCHIVE_CB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fullBackUpARCHIVE_CB.ForeColor = System.Drawing.Color.White;
-            this.fullBackUpARCHIVE_CB.Location = new System.Drawing.Point(123, 178);
-            this.fullBackUpARCHIVE_CB.Name = "fullBackUpARCHIVE_CB";
-            this.fullBackUpARCHIVE_CB.Size = new System.Drawing.Size(184, 20);
-            this.fullBackUpARCHIVE_CB.TabIndex = 26;
-            this.fullBackUpARCHIVE_CB.Text = "Full Backup with ARCHIVE";
-            this.fullBackUpARCHIVE_CB.UseVisualStyleBackColor = true;
-            this.fullBackUpARCHIVE_CB.CheckedChanged += new System.EventHandler(this.fullBackUpARCHIVE_CB_Change);
+            this.ARCHIVE_CB.AutoSize = true;
+            this.ARCHIVE_CB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ARCHIVE_CB.ForeColor = System.Drawing.Color.White;
+            this.ARCHIVE_CB.Location = new System.Drawing.Point(123, 178);
+            this.ARCHIVE_CB.Name = "ARCHIVE_CB";
+            this.ARCHIVE_CB.Size = new System.Drawing.Size(131, 20);
+            this.ARCHIVE_CB.TabIndex = 26;
+            this.ARCHIVE_CB.Text = "Backup Archive\'s";
+            this.ARCHIVE_CB.UseVisualStyleBackColor = true;
+            this.ARCHIVE_CB.CheckedChanged += new System.EventHandler(this.ARCHIVE_CB_Change);
             // 
             // incrementalBackupCB
             // 
@@ -252,19 +251,6 @@ namespace Strategy_Manager
             this.spfileCheckBox.Text = "Spfile";
             this.spfileCheckBox.UseVisualStyleBackColor = true;
             // 
-            // logsCheckBox
-            // 
-            this.logsCheckBox.AutoSize = true;
-            this.logsCheckBox.Enabled = false;
-            this.logsCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logsCheckBox.ForeColor = System.Drawing.Color.White;
-            this.logsCheckBox.Location = new System.Drawing.Point(174, 383);
-            this.logsCheckBox.Name = "logsCheckBox";
-            this.logsCheckBox.Size = new System.Drawing.Size(57, 20);
-            this.logsCheckBox.TabIndex = 35;
-            this.logsCheckBox.Text = "Logs";
-            this.logsCheckBox.UseVisualStyleBackColor = true;
-            // 
             // tablespaces
             // 
             this.tablespaces.BackColor = System.Drawing.SystemColors.GrayText;
@@ -277,7 +263,7 @@ namespace Strategy_Manager
             this.tablespaces.Items.AddRange(new object[] {
             "users",
             "temp"});
-            this.tablespaces.Location = new System.Drawing.Point(184, 434);
+            this.tablespaces.Location = new System.Drawing.Point(184, 416);
             this.tablespaces.Name = "tablespaces";
             this.tablespaces.Size = new System.Drawing.Size(120, 96);
             this.tablespaces.TabIndex = 36;
@@ -288,7 +274,7 @@ namespace Strategy_Manager
             this.tablespacesList.Enabled = false;
             this.tablespacesList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tablespacesList.ForeColor = System.Drawing.Color.White;
-            this.tablespacesList.Location = new System.Drawing.Point(171, 411);
+            this.tablespacesList.Location = new System.Drawing.Point(171, 392);
             this.tablespacesList.Name = "tablespacesList";
             this.tablespacesList.Size = new System.Drawing.Size(89, 16);
             this.tablespacesList.TabIndex = 37;
@@ -306,7 +292,7 @@ namespace Strategy_Manager
             this.backupTablespaces.Items.AddRange(new object[] {
             "users",
             "temp"});
-            this.backupTablespaces.Location = new System.Drawing.Point(380, 434);
+            this.backupTablespaces.Location = new System.Drawing.Point(380, 416);
             this.backupTablespaces.Name = "backupTablespaces";
             this.backupTablespaces.Size = new System.Drawing.Size(120, 96);
             this.backupTablespaces.TabIndex = 38;
@@ -322,13 +308,12 @@ namespace Strategy_Manager
             this.Controls.Add(this.backupTablespaces);
             this.Controls.Add(this.tablespacesList);
             this.Controls.Add(this.tablespaces);
-            this.Controls.Add(this.logsCheckBox);
             this.Controls.Add(this.spfileCheckBox);
             this.Controls.Add(this.controlCheckBox);
             this.Controls.Add(this.partialBackupCB);
             this.Controls.Add(this.levelGroupBox);
             this.Controls.Add(this.incrementalBackupCB);
-            this.Controls.Add(this.fullBackUpARCHIVE_CB);
+            this.Controls.Add(this.ARCHIVE_CB);
             this.Controls.Add(this.fullBackupCB);
             this.Controls.Add(this.strategiesTitle);
             this.Controls.Add(this.typeBackup);
@@ -367,7 +352,7 @@ namespace Strategy_Manager
         private System.Windows.Forms.Label typeBackup;
         private System.Windows.Forms.Label strategiesTitle;
         private System.Windows.Forms.CheckBox fullBackupCB;
-        private System.Windows.Forms.CheckBox fullBackUpARCHIVE_CB;
+        private System.Windows.Forms.CheckBox ARCHIVE_CB;
         private System.Windows.Forms.CheckBox incrementalBackupCB;
         private System.Windows.Forms.RadioButton level1;
         private System.Windows.Forms.RadioButton level0;
@@ -375,7 +360,6 @@ namespace Strategy_Manager
         private System.Windows.Forms.CheckBox partialBackupCB;
         private System.Windows.Forms.CheckBox controlCheckBox;
         private System.Windows.Forms.CheckBox spfileCheckBox;
-        private System.Windows.Forms.CheckBox logsCheckBox;
         private System.Windows.Forms.ListBox tablespaces;
         private System.Windows.Forms.Label tablespacesList;
         private System.Windows.Forms.ListBox backupTablespaces;
@@ -388,7 +372,6 @@ namespace Strategy_Manager
             if (fullBackupCB.Checked)
             {
                 backupScript.Add("backup database;");
-                fullBackUpARCHIVE_CB.Enabled = false;
                 incrementalBackupCB.Enabled = false;
                 levelGroupBox.Enabled = false;
                 partialBackupCB.Enabled = false;
@@ -397,12 +380,10 @@ namespace Strategy_Manager
                 logsCheckBox.Enabled = false;
                 tablespaces.Enabled = false;
                 backupTablespaces.Enabled = false;
-                //System.Windows.Forms.MessageBox.Show(backupScript[0].ToString()+" - "+backupScript[1].ToString());
             }
             else
             {
                 backupScript.Remove("backup database;");
-                fullBackUpARCHIVE_CB.Enabled = true;
                 incrementalBackupCB.Enabled = true;
                 levelGroupBox.Enabled = false;
                 partialBackupCB.Enabled = true;
@@ -414,38 +395,26 @@ namespace Strategy_Manager
             }
         }
 
-        private void fullBackUpARCHIVE_CB_Change(object sender, EventArgs e)
+        private void ARCHIVE_CB_Change(object sender, EventArgs e)
         {
-            if (fullBackUpARCHIVE_CB.Checked)
+            if (ARCHIVE_CB.Checked)
             {
+                List<string> aux = backupScript;
                 backupScript = new List<string>();
+
                 backupScript.Add("crosscheck archivelog all;");
                 backupScript.Add("run{");
                 backupScript.Add("SQL \"alter system switch logfile\";");
-                backupScript.Add("backup database plus archivelog;");
-                fullBackupCB.Enabled = false;
-                incrementalBackupCB.Enabled = false;
-                levelGroupBox.Enabled = false;
-                partialBackupCB.Enabled = false;
-                controlCheckBox.Enabled = false;
-                spfileCheckBox.Enabled = false;
-                logsCheckBox.Enabled = false;
-                tablespaces.Enabled = false;
-                backupTablespaces.Enabled = false;
+                backupScript.Add("backup archivelog all;");
+                foreach (string scriptline in aux)
+                    if (scriptline != "run{")
+                        backupScript.Add(scriptline);
             }
             else
             {
-                backupScript = new List<string>();
-                backupScript.Add("run{");
-                fullBackupCB.Enabled = true;
-                incrementalBackupCB.Enabled = true;
-                levelGroupBox.Enabled = false;
-                partialBackupCB.Enabled = true;
-                controlCheckBox.Enabled = false;
-                spfileCheckBox.Enabled = false;
-                logsCheckBox.Enabled = false;
-                tablespaces.Enabled = false;
-                backupTablespaces.Enabled = false;
+                backupScript.Remove("crosscheck archivelog all;");
+                backupScript.Remove("SQL \"alter system switch logfile\";");
+                backupScript.Remove("backup archivelog all;");
             }
         }
 
@@ -454,7 +423,6 @@ namespace Strategy_Manager
             if (incrementalBackupCB.Checked)
             {
                 fullBackupCB.Enabled = false;
-                fullBackUpARCHIVE_CB.Enabled = false;
                 levelGroupBox.Enabled = true;
                 partialBackupCB.Enabled = false;
                 controlCheckBox.Enabled = false;
@@ -466,7 +434,6 @@ namespace Strategy_Manager
             else
             {
                 fullBackupCB.Enabled = true;
-                fullBackUpARCHIVE_CB.Enabled = true;
                 levelGroupBox.Enabled = false;
                 partialBackupCB.Enabled = true;
                 controlCheckBox.Enabled = false;
