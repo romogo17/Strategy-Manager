@@ -24,6 +24,9 @@ namespace Oracle_Tablespace_Monitor
             app = application;
             dbServer.Text = "Server: "+ser;
             dbInstance.Text = "Database Instance: "+bas;
+            servidor = ser;
+            instancia = bas;
+            connection = conexion;
             solicitaEstrategias(conexion);
         }
 

@@ -110,7 +110,7 @@
             this.myLayout.AutoScroll = true;
             this.myLayout.Controls.Add(this.dataGridView1);
             this.myLayout.Location = new System.Drawing.Point(32, 117);
-            this.myLayout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.myLayout.Margin = new System.Windows.Forms.Padding(2);
             this.myLayout.Name = "myLayout";
             this.myLayout.Size = new System.Drawing.Size(764, 325);
             this.myLayout.TabIndex = 17;
@@ -146,7 +146,7 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.GridColor = System.Drawing.Color.Black;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.MaximumSize = new System.Drawing.Size(661, 122);
+            this.dataGridView1.MaximumSize = new System.Drawing.Size(661, 300);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -163,7 +163,7 @@
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(661, 122);
+            this.dataGridView1.Size = new System.Drawing.Size(661, 300);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
@@ -239,13 +239,14 @@
         private FlowLayoutPanel myLayout;
         private ToolStripMenuItem crearEstrategiaDeRespaldoToolStripMenuItem;
         private DataGridView dataGridView1;
-        private String busquedaBase;
-        private String busquedaServidor;
+        private String servidor;
+        private String instancia;
+        private String connection;
         private Application app;
 
         private void registrarEstrategias_click(object sender, EventArgs e)
         {
-            CrearEstrategia ce = new CrearEstrategia(app);
+            CrearEstrategia ce = new CrearEstrategia(this,connection, servidor, instancia);
             ce.ShowDialog(this);
         }
 

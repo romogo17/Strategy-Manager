@@ -127,6 +127,7 @@ CREATE OR REPLACE PROCEDURE update_connection(ipBase in varchar2, puertoBase in 
      WHEN OTHERS THEN ROLLBACK;
   END;
 /
+
 --Procedimiento para insertar una estrategia
 CREATE OR REPLACE PROCEDURE insert_strategy(name in varchar2, connection in varchar2, priori in varchar2)
    IS
@@ -147,6 +148,8 @@ create or replace function get_strategy(strategy in varchar2)
      RETURN cr;
    END;
 /
+
+ --Funcion para conseguir los logs de las estrategias
 create or replace function get_log(strategy in varchar2)
    return SYS_REFCURSOR IS
    cr SYS_REFCURSOR;
@@ -165,3 +168,15 @@ create or replace function get_log(strategy in varchar2)
 
 --BACKUP INCREMENTAL LEVEL 1 DATABASE;    INCREMENTAL         //incluye control y pfile
 --BACKUP INCREMENTAL LEVEL 0 DATABASE;	  INCREMENTAL		  //incluye control y pfile
+
+--Procedimiento para insertar una linea de la estrategia
+CREATE OR REPLACE PROCEDURE insert_strategyline(strategy_id in varchar2, line in varchar2)
+  IS
+  BEGIN
+    insert into strategy_line(strategy_id,line) values (strategy_id, line);
+    COMMIT;
+
+    EXCEPTION
+     WHEN OTHERS THEN ROLLBACK;
+  END;
+/
