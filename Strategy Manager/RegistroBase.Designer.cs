@@ -239,13 +239,25 @@ namespace Strategy_Manager
                 objCmd2.Parameters.Add(new OracleParameter("5", OracleDbType.Varchar2, puerto_base.Text, ParameterDirection.Input));
                 objCmd2.Parameters.Add(new OracleParameter("6", OracleDbType.Decimal, 1, ParameterDirection.Input));
 
+                OracleCommand objCmd3 = new OracleCommand();
+                objCmd3.Connection = objConn;
+                objCmd3.CommandText = "insert into connection@" + generaId + " values(:1,:2,:3,:4,:5,:6)";
+                objCmd3.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, generaId, ParameterDirection.Input));
+                objCmd3.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, nombreServidor.Text, ParameterDirection.Input));
+                objCmd3.Parameters.Add(new OracleParameter("3", OracleDbType.Varchar2, baseDatos.Text, ParameterDirection.Input));
+                objCmd3.Parameters.Add(new OracleParameter("4", OracleDbType.Varchar2, ip_base.Text, ParameterDirection.Input));
+                objCmd3.Parameters.Add(new OracleParameter("5", OracleDbType.Varchar2, puerto_base.Text, ParameterDirection.Input));
+                objCmd3.Parameters.Add(new OracleParameter("6", OracleDbType.Decimal, 1, ParameterDirection.Input));
+
                 try
                 {
                     objConn.Open();
-                    objCmd2.ExecuteNonQuery();
                     objCmd.ExecuteNonQuery();
+                    objCmd3.ExecuteNonQuery();
+                    objCmd2.ExecuteNonQuery();
+                  
                     app.solicitaBases();
-                    remoteConection();
+                   
                     this.Close();
                     
                     System.Windows.Forms.MessageBox.Show("Database connection register successfully");
@@ -253,7 +265,12 @@ namespace Strategy_Manager
                 }
                 catch (Exception ex)
                 {
-                    System.Windows.Forms.MessageBox.Show("Error");
+                    System.Windows.Forms.MessageBox.Show("Error Connection");
+                    OracleCommand objCmd5 = new OracleCommand();
+                    objCmd5.Connection = objConn;
+                    objCmd5.CommandType = CommandType.Text;
+                    objCmd5.CommandText = "drop database link C_" + nombreServidor.Text + baseDatos.Text;
+                    objCmd5.ExecuteNonQuery();
                 }
 
                 objConn.Close();
@@ -266,7 +283,7 @@ namespace Strategy_Manager
             this.Close();
             //this.Dispose();
         }
-        private void remoteConection()
+        private void remoteConection() 
         {
             using (OracleConnection objConn = new OracleConnection(ConfigurationManager.AppSettings["connectionString"]))
             {

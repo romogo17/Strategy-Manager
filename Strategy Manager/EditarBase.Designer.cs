@@ -232,56 +232,81 @@ namespace Strategy_Manager
         private Application app;
 
         private void agregar_Click(object sender, EventArgs e)
+            
         {
             using (OracleConnection objConn = new OracleConnection(ConfigurationManager.AppSettings["connectionString"]))
             {
-                OracleCommand objCmd = new OracleCommand();
-                objCmd.Connection = objConn;
-                objCmd.CommandType = CommandType.Text;
-                objCmd.CommandText = "drop database link C_" + nombreServidor.Text + baseDatos.Text;
-                OracleCommand objCmd3 = new OracleCommand();
-                objCmd3.Connection = objConn;
-                objCmd3.CommandText = "create database link " + "C_" + nombreServidor.Text + baseDatos.Text + "\n" +
-                                       "connect to SYSTEM identified by MANAGER \n" +
-                                        "using \n" +
-                                       "'(DESCRIPTION = \n" +
-                                        "(ADDRESS = (PROTOCOL = TCP)(HOST = " + ip_base.Text + ")(PORT =" + puerto.Text + ")) \n" +
-                                        "(CONNECT_DATA = \n" +
-                                        "(SERVER = DEDICATED) \n" +
-                                        "(SERVICE_NAME = XE) \n " +
-                                        ") \n" +
-                                        ")' \n ";
+                String generaId = "C_" + nombreServidor.Text + baseDatos.Text; ;
 
-                
                 OracleCommand objCmd2 = new OracleCommand();
                 objCmd2.Connection = objConn;
-                objCmd2.CommandType = CommandType.StoredProcedure;
-                objCmd2.CommandText = "update_connection";
-                objCmd2.Parameters.Add(new OracleParameter("1", ip_base.Text));
-                objCmd2.Parameters.Add(new OracleParameter("2", puerto.Text));
-         
-                int check = ' ';
-                if (checkBox1.Checked) { check = 1; } else { check = 0; };
-                objCmd2.Parameters.Add(new OracleParameter("3", check));
-                String generaId = "C_" + nombreServidor.Text + baseDatos.Text;
-                objCmd2.Parameters.Add(new OracleParameter("4",generaId));
-            
+                
+                objCmd2.CommandText = "delete from connection where conn_id =:1";
+                objCmd2.Parameters.Add(new OracleParameter("1", generaId));
+
+
+                OracleCommand objCmd4 = new OracleCommand();
+                objCmd4.Connection = objConn;
+                objCmd4.CommandText = "delete from connection@"+generaId +" where conn_id=:1";
+                objCmd4.Parameters.Add(new OracleParameter("1", generaId));
+                 
+
+                
 
                 try
                 {
                     objConn.Open();
-                    objCmd.ExecuteNonQuery();
+                    objCmd4.ExecuteNonQuery();
+                    //lose()
+                    
                     objCmd2.ExecuteNonQuery();
-                    objCmd3.ExecuteNonQuery();
+                    //objConn.Close();
 
+                    // objConn.Open();
+
+                    dropCreateDL();
+
+                    //objCmd3.ExecuteNonQuery();
+                    //objCmd6.ExecuteNonQuery();
+                    //objCmd7.ExecuteNonQuery();
+
+                    
                     app.solicitaBases();
                     this.Close();
                     System.Windows.Forms.MessageBox.Show("Database connection updated successfully");
+                   
 
                 }
                 catch (Exception ex)
                 {
                     System.Windows.Forms.MessageBox.Show("Error");
+                    dropCreateDLOld();
+                   
+                    OracleCommand objCmd11 = new OracleCommand();
+                    objCmd11.Connection = objConn;
+                    objCmd11.CommandText = "insert_connection";
+                    objCmd11.CommandType = CommandType.StoredProcedure;
+                    objCmd11.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, generaId, ParameterDirection.Input));
+                    objCmd11.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, nombreServidor.Text, ParameterDirection.Input));
+                    objCmd11.Parameters.Add(new OracleParameter("3", OracleDbType.Varchar2, baseDatos.Text, ParameterDirection.Input));
+                    objCmd11.Parameters.Add(new OracleParameter("4", OracleDbType.Varchar2, ip_anterior, ParameterDirection.Input));
+                    objCmd11.Parameters.Add(new OracleParameter("5", OracleDbType.Varchar2, puerto_anterior, ParameterDirection.Input));
+                    objCmd11.Parameters.Add(new OracleParameter("6", OracleDbType.Decimal, check, ParameterDirection.Input));
+                   
+                    objCmd11.ExecuteNonQuery();
+
+                    OracleCommand objCmd12 = new OracleCommand();
+                    objCmd12.Connection = objConn;
+                    objCmd12.CommandText = "insert into connection@" + generaId + " values(:1,:2,:3,:4,:5,:6)";
+                    objCmd12.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, generaId, ParameterDirection.Input));
+                    objCmd12.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, nombreServidor.Text, ParameterDirection.Input));
+                    objCmd12.Parameters.Add(new OracleParameter("3", OracleDbType.Varchar2, baseDatos.Text, ParameterDirection.Input));
+                    objCmd12.Parameters.Add(new OracleParameter("4", OracleDbType.Varchar2, ip_anterior, ParameterDirection.Input));
+                    objCmd12.Parameters.Add(new OracleParameter("5", OracleDbType.Varchar2, puerto_anterior, ParameterDirection.Input));
+                    objCmd12.Parameters.Add(new OracleParameter("6", OracleDbType.Decimal, check, ParameterDirection.Input));
+                    
+                    objCmd12.ExecuteNonQuery();
+                    objConn.Close();
                 }
 
                 objConn.Close();
@@ -301,16 +326,128 @@ namespace Strategy_Manager
             baseDatos.Text = based;
             nombreServidor.Text = servidor;
             ip_base.Text = ip;
+            ip_anterior = ip;
+            check = alive;
+            puerto_anterior = puerto;
             this.puerto.Text = puerto;
 
             bD = based;
             s = servidor;
             if (alive == "1") { checkBox1.Checked = true; } else { checkBox1.Checked = false; }
         }
+        public void dropCreateDL()
+        {
+            using (OracleConnection objConn = new OracleConnection(ConfigurationManager.AppSettings["connectionString"]))
+            {
+                String generaId = "C_" + nombreServidor.Text + baseDatos.Text;
+                OracleCommand objCmd = new OracleCommand();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "drop database link " + generaId;
+               // objCmd.Parameters.Add(new OracleParameter("1", generaId));
+
+
+                OracleCommand objCmd3 = new OracleCommand();
+                objCmd3.Connection = objConn;
+                objCmd3.CommandText = "create database link " + "C_" + nombreServidor.Text + baseDatos.Text + "\n" +
+                                       "connect to SYSTEM identified by MANAGER \n" +
+                                        "using \n" +
+                                       "'(DESCRIPTION = \n" +
+                                        "(ADDRESS = (PROTOCOL = TCP)(HOST = " + ip_base.Text + ")(PORT =" + puerto.Text + ")) \n" +
+                                        "(CONNECT_DATA = \n" +
+                                        "(SERVER = DEDICATED) \n" +
+                                        "(SERVICE_NAME = XE) \n " +
+                                        ") \n" +
+                                        ")' \n ";
+
+                String number;
+                if (checkBox1.Checked) { number = "1"; } else { number = "0"; }
+                OracleCommand objCmd7 = new OracleCommand();
+                objCmd7.Connection = objConn;
+                objCmd7.CommandText = "insert_connection";
+                objCmd7.CommandType = CommandType.StoredProcedure;
+                objCmd7.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, generaId, ParameterDirection.Input));
+                objCmd7.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, nombreServidor.Text, ParameterDirection.Input));
+                objCmd7.Parameters.Add(new OracleParameter("3", OracleDbType.Varchar2, baseDatos.Text, ParameterDirection.Input));
+                objCmd7.Parameters.Add(new OracleParameter("4", OracleDbType.Varchar2, ip_base.Text, ParameterDirection.Input));
+                objCmd7.Parameters.Add(new OracleParameter("5", OracleDbType.Varchar2, puerto.Text, ParameterDirection.Input));
+                objCmd7.Parameters.Add(new OracleParameter("6", OracleDbType.Decimal, number, ParameterDirection.Input));
+
+                OracleCommand objCmd6 = new OracleCommand();
+                objCmd6.Connection = objConn;
+                objCmd6.CommandText = "insert into connection@" + generaId + " values(:1,:2,:3,:4,:5,:6)";
+                objCmd6.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, generaId, ParameterDirection.Input));
+                objCmd6.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, nombreServidor.Text, ParameterDirection.Input));
+                objCmd6.Parameters.Add(new OracleParameter("3", OracleDbType.Varchar2, baseDatos.Text, ParameterDirection.Input));
+                objCmd6.Parameters.Add(new OracleParameter("4", OracleDbType.Varchar2, ip_base.Text, ParameterDirection.Input));
+                objCmd6.Parameters.Add(new OracleParameter("5", OracleDbType.Varchar2, puerto.Text, ParameterDirection.Input));
+                objCmd6.Parameters.Add(new OracleParameter("6", OracleDbType.Decimal, number, ParameterDirection.Input));
+
+                try {
+                    objConn.Open();
+                    objCmd.ExecuteNonQuery();
+                    objCmd3.ExecuteNonQuery();
+                    objCmd6.ExecuteNonQuery();
+                    objCmd7.ExecuteNonQuery();
+    
+                }
+                catch (Exception ex)
+           
+                {
+                    objConn.Close();
+                    objConn.Dispose();
+                    throw new Exception();
+                }
+                objConn.Close();
+                objConn.Dispose();
+            }
+            
+        }
+        public void dropCreateDLOld()
+        {
+            using (OracleConnection objConn = new OracleConnection(ConfigurationManager.AppSettings["connectionString"]))
+            {
+                String generaId = "C_" + nombreServidor.Text + baseDatos.Text;
+                OracleCommand objCmd = new OracleCommand();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "drop database link " + generaId;
+                objCmd.Parameters.Add(new OracleParameter("1", generaId));
+
+
+                OracleCommand objCmd3 = new OracleCommand();
+                objCmd3.Connection = objConn;
+                objCmd3.CommandText = "create database link " + "C_" + nombreServidor.Text + baseDatos.Text + "\n" +
+                                       "connect to SYSTEM identified by MANAGER \n" +
+                                        "using \n" +
+                                       "'(DESCRIPTION = \n" +
+                                        "(ADDRESS = (PROTOCOL = TCP)(HOST = " + ip_anterior + ")(PORT =" + puerto_anterior + ")) \n" +
+                                        "(CONNECT_DATA = \n" +
+                                        "(SERVER = DEDICATED) \n" +
+                                        "(SERVICE_NAME = XE) \n " +
+                                        ") \n" +
+                                        ")' \n ";
+
+                try
+                {
+                    objConn.Open();
+                    objCmd.ExecuteNonQuery();
+                    objCmd3.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+                objConn.Close();
+                objConn.Dispose();
+            }
+        }
 
         private System.Windows.Forms.TextBox nombreServidor;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label11;
+        private String ip_anterior;
+        private String puerto_anterior;
+        private String check;
         String bD;
         String s;
     }

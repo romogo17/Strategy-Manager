@@ -30,6 +30,5 @@ namespace Strategy_Manager
             solicitaEstrategias(conexion);
         }
 
-
     }
 }

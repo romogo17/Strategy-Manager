@@ -92,6 +92,7 @@
             this.crearEstrategiaDeRespaldoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.J)));
             this.crearEstrategiaDeRespaldoToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.crearEstrategiaDeRespaldoToolStripMenuItem.Text = "Edit Strategies";
+
             // 
             // menuStrip1
             // 

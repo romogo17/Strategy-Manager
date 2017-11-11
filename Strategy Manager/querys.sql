@@ -202,6 +202,16 @@ CREATE OR REPLACE PROCEDURE insert_strategyRemote(name in varchar2, connection i
        WHEN OTHERS THEN ROLLBACK;
 END;
 /
+
+CREATE OR REPLACE PROCEDURE dropDL(name in varchar2)
+   IS   
+   BEGIN
+    EXECUTE IMMEDIATE 'drop database link ' || name;
+	  COMMIT;
+      EXCEPTION
+       WHEN OTHERS THEN ROLLBACK;
+END;
+/
 --Estructura Scripts
 --BACKUP CURRENT CONTROLFILE              Control
 --BACKUP SPFILE                           spfile
