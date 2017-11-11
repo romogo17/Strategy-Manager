@@ -168,6 +168,8 @@ create or replace function get_Error(strategy in varchar2)
      RETURN cr;
    END;
 /
+
+--Procedimiento para insertar las lines de la estrategia
 CREATE OR REPLACE PROCEDURE insert_strategyline(strategy_id in varchar2, nline in int, line in varchar2)
   IS
   BEGIN
@@ -212,6 +214,19 @@ CREATE OR REPLACE PROCEDURE dropDL(name in varchar2)
        WHEN OTHERS THEN ROLLBACK;
 END;
 /
+
+--Procedimiento para insertar las frecuencias
+CREATE OR REPLACE PROCEDURE insert_frequency(strategy_id in varchar2, d in int, h in int, m in int)
+  IS
+  BEGIN
+    insert into frequency(strategy_id,day,hour,minutes) values (strategy_id, d, h, m);
+    COMMIT;
+
+    EXCEPTION
+     WHEN OTHERS THEN ROLLBACK;
+  END;
+/
+
 --Estructura Scripts
 --BACKUP CURRENT CONTROLFILE              Control
 --BACKUP SPFILE                           spfile

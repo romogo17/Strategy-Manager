@@ -23,12 +23,5 @@ namespace Strategy_Manager
             backupScript.Add("run{");
 
         }
-
-        private void CrearEstrategia_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
     }
 }
