@@ -241,7 +241,8 @@ namespace Strategy_Manager
 
                 OracleCommand objCmd3 = new OracleCommand();
                 objCmd3.Connection = objConn;
-                objCmd3.CommandText = "insert into connection@" + generaId + " values(:1,:2,:3,:4,:5,:6)";
+                objCmd3.CommandText = "insert_connectionRemote";
+                objCmd3.CommandType = CommandType.StoredProcedure;
                 objCmd3.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, generaId, ParameterDirection.Input));
                 objCmd3.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, nombreServidor.Text, ParameterDirection.Input));
                 objCmd3.Parameters.Add(new OracleParameter("3", OracleDbType.Varchar2, baseDatos.Text, ParameterDirection.Input));
@@ -268,8 +269,9 @@ namespace Strategy_Manager
                     System.Windows.Forms.MessageBox.Show("Error Connection");
                     OracleCommand objCmd5 = new OracleCommand();
                     objCmd5.Connection = objConn;
-                    objCmd5.CommandType = CommandType.Text;
-                    objCmd5.CommandText = "drop database link C_" + nombreServidor.Text + baseDatos.Text;
+                    objCmd5.CommandText = "dropDL";
+                    objCmd5.CommandType = CommandType.StoredProcedure;
+                    objCmd5.Parameters.Add(new OracleParameter("1", generaId));
                     objCmd5.ExecuteNonQuery();
                 }
 
@@ -283,39 +285,6 @@ namespace Strategy_Manager
             this.Close();
             //this.Dispose();
         }
-        private void remoteConection() 
-        {
-            using (OracleConnection objConn = new OracleConnection(ConfigurationManager.AppSettings["connectionString"]))
-            {
-               
-                OracleCommand objCmd2 = new OracleCommand();
-                objCmd2.Connection = objConn;
-                String generaId = "C_" + nombreServidor.Text + baseDatos.Text;
-                objCmd2.CommandText = "insert into connection@" +generaId+" values(:1,:2,:3,:4,:5,:6)";
-                objCmd2.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, generaId, ParameterDirection.Input));
-                objCmd2.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, nombreServidor.Text, ParameterDirection.Input));
-                objCmd2.Parameters.Add(new OracleParameter("3", OracleDbType.Varchar2, baseDatos.Text, ParameterDirection.Input));
-                objCmd2.Parameters.Add(new OracleParameter("4", OracleDbType.Varchar2, ip_base.Text, ParameterDirection.Input));
-                objCmd2.Parameters.Add(new OracleParameter("5", OracleDbType.Varchar2, puerto_base.Text, ParameterDirection.Input));
-                objCmd2.Parameters.Add(new OracleParameter("6", OracleDbType.Decimal, 1, ParameterDirection.Input));
-
-                try
-                {
-                    objConn.Open();
-                    objCmd2.ExecuteNonQuery();
-                    app.solicitaBases();
-                    this.Close();
-                   // System.Windows.Forms.MessageBox.Show("Database connection register successfully");
-
-                }
-                catch (Exception ex)
-                {
-                   // System.Windows.Forms.MessageBox.Show("Error");
-                }
-
-                objConn.Close();
-                objConn.Dispose();
-            }
-        }
+        
     }
 }

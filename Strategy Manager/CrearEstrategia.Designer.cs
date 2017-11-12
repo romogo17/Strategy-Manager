@@ -905,9 +905,10 @@ namespace Strategy_Manager
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(684, 911);
+            this.ClientSize = new System.Drawing.Size(710, 687);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.partialBackupCB);
@@ -922,9 +923,9 @@ namespace Strategy_Manager
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(700, 950);
+            this.MaximumSize = new System.Drawing.Size(726, 726);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(700, 950);
+            this.MinimumSize = new System.Drawing.Size(726, 726);
             this.Name = "CrearEstrategia";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

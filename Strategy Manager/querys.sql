@@ -82,20 +82,6 @@ values ('EST_1509986176', 1, 12, 35);
 insert into frequency(strategy_id, day, hour, minutes)
 values ('EST_1509986180', 1, 12, 35);
 
-
---Ejemplo de data link
-create database link testlink_db2
-connect to system identified by manager
-using
-'(DESCRIPTION=
-(ADDRESS=
-(PROTOCOL=TCP)
-(HOST=10.2.10.18)
-(PORT=1525))
-(CONNECT_DATA=
-(SERVER = DEDICATED)
-(SERVICE_NAME = XE)))'
- /
  --Funcion para conseguir las bases de datos
  CREATE OR REPLACE FUNCTION get_database
   RETURN SYS_REFCURSOR IS
@@ -195,25 +181,27 @@ CREATE OR REPLACE PROCEDURE insert_strategyline(strategy_id in varchar2, nline i
 --Procedimiento para insertar una estrategiaRemota (No sirve)
 CREATE OR REPLACE PROCEDURE insert_strategyRemote(name in varchar2, connection in varchar2, priori in varchar2)
    IS
-    D varchar2(1000);
    BEGIN
-      D := 'insert into strategy@' || connection || ' values (' || name || ',' || connection || ',' || priori || ')';
-      Execute  immediate D;
+      Execute inmedita 'insert into strategy@' || connection || ' values(''' || name || ''',''' || connection || ''',''' || priori || ''')';
 	  COMMIT;
       EXCEPTION
        WHEN OTHERS THEN ROLLBACK;
 END;
 /
 
-CREATE OR REPLACE PROCEDURE dropDL(name in varchar2)
-   IS   
-   BEGIN
-    EXECUTE IMMEDIATE 'drop database link ' || name;
-	  COMMIT;
-      EXCEPTION
-       WHEN OTHERS THEN ROLLBACK;
-END;
-/
+--Ejemplo de data link
+create database link TEST
+connect to system identified by manager
+using
+'(DESCRIPTION=
+(ADDRESS=
+(PROTOCOL=TCP)
+(HOST=10.2.10.18)
+(PORT=1525))
+(CONNECT_DATA=
+(SERVER = DEDICATED)
+(SERVICE_NAME = XE)))'
+ /
 
 --Procedimiento para insertar las frecuencias
 CREATE OR REPLACE PROCEDURE insert_frequency(strategy_id in varchar2, d in int, h in int, m in int)
@@ -237,3 +225,35 @@ CREATE OR REPLACE PROCEDURE insert_frequency(strategy_id in varchar2, d in int, 
 
 --BACKUP INCREMENTAL LEVEL 1 DATABASE;    INCREMENTAL         //incluye control y pfile
 --BACKUP INCREMENTAL LEVEL 0 DATABASE;	  INCREMENTAL		  //incluye control y pfile
+
+--Procedimiento insert coneccion remotas
+CREATE OR REPLACE PROCEDURE insert_connectionRemote(id in varchar2, nombreServidor in varchar2,baseDatos in varchar2,ipBase in varchar2,puertoBase in varchar2,alive in number)
+  IS
+  BEGIN	
+      EXECUTE IMMEDIATE 'insert into connection@' || id || ' values(''' || id || ''',''' || nombreServidor || ''',''' || baseDatos || ''',''' || ipBase || ''',''' || puertoBase || ''',' || alive || ')';
+	  COMMIT; --Necesito que esto me tira la EXCEPTION si falla para poder comprobar la conexion
+  END;
+  
+/
+--Procedimiento para bajar un datalink
+CREATE OR REPLACE PROCEDURE dropDL(name in varchar2)
+   IS   
+   BEGIN
+   --EXECUTE IMMEDIATE 'ALTER SESSION CLOSE DATABASE LINK ' || name;
+   EXECUTE IMMEDIATE 'drop database link ' || name;
+   COMMIT;
+     
+END;
+/
+--Procedimiento para eliminar una conexion remotam
+CREATE OR REPLACE PROCEDURE delete_connectionRemote(id in varchar2)
+IS   
+   BEGIN
+   EXECUTE IMMEDIATE 'delete from connection@' || id || ' where CONN_ID=''' || id ||'''';
+   COMMIT;
+      EXCEPTION
+     WHEN OTHERS THEN ROLLBACK;
+     
+END;
+/
+

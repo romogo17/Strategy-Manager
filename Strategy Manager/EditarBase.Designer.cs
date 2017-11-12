@@ -240,72 +240,31 @@ namespace Strategy_Manager
 
                 OracleCommand objCmd2 = new OracleCommand();
                 objCmd2.Connection = objConn;
-                
                 objCmd2.CommandText = "delete from connection where conn_id =:1";
                 objCmd2.Parameters.Add(new OracleParameter("1", generaId));
 
 
                 OracleCommand objCmd4 = new OracleCommand();
                 objCmd4.Connection = objConn;
-                objCmd4.CommandText = "delete from connection@"+generaId +" where conn_id=:1";
+                objCmd4.CommandText = "delete_connectionRemote";
+                objCmd4.CommandType = CommandType.StoredProcedure;
                 objCmd4.Parameters.Add(new OracleParameter("1", generaId));
                  
-
-                
-
                 try
                 {
                     objConn.Open();
-                    objCmd4.ExecuteNonQuery();
-                    //lose()
-                    
+                    objCmd4.ExecuteNonQuery();                    
                     objCmd2.ExecuteNonQuery();
-                    //objConn.Close();
-
-                    // objConn.Open();
-
-                    dropCreateDL();
-
-                    //objCmd3.ExecuteNonQuery();
-                    //objCmd6.ExecuteNonQuery();
-                    //objCmd7.ExecuteNonQuery();
-
-                    
+                    insertNew();
                     app.solicitaBases();
                     this.Close();
                     System.Windows.Forms.MessageBox.Show("Database connection updated successfully");
-                   
-
                 }
                 catch (Exception ex)
                 {
-                    System.Windows.Forms.MessageBox.Show("Error");
+          
                     dropCreateDLOld();
-                   
-                    OracleCommand objCmd11 = new OracleCommand();
-                    objCmd11.Connection = objConn;
-                    objCmd11.CommandText = "insert_connection";
-                    objCmd11.CommandType = CommandType.StoredProcedure;
-                    objCmd11.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, generaId, ParameterDirection.Input));
-                    objCmd11.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, nombreServidor.Text, ParameterDirection.Input));
-                    objCmd11.Parameters.Add(new OracleParameter("3", OracleDbType.Varchar2, baseDatos.Text, ParameterDirection.Input));
-                    objCmd11.Parameters.Add(new OracleParameter("4", OracleDbType.Varchar2, ip_anterior, ParameterDirection.Input));
-                    objCmd11.Parameters.Add(new OracleParameter("5", OracleDbType.Varchar2, puerto_anterior, ParameterDirection.Input));
-                    objCmd11.Parameters.Add(new OracleParameter("6", OracleDbType.Decimal, check, ParameterDirection.Input));
-                   
-                    objCmd11.ExecuteNonQuery();
-
-                    OracleCommand objCmd12 = new OracleCommand();
-                    objCmd12.Connection = objConn;
-                    objCmd12.CommandText = "insert into connection@" + generaId + " values(:1,:2,:3,:4,:5,:6)";
-                    objCmd12.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, generaId, ParameterDirection.Input));
-                    objCmd12.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, nombreServidor.Text, ParameterDirection.Input));
-                    objCmd12.Parameters.Add(new OracleParameter("3", OracleDbType.Varchar2, baseDatos.Text, ParameterDirection.Input));
-                    objCmd12.Parameters.Add(new OracleParameter("4", OracleDbType.Varchar2, ip_anterior, ParameterDirection.Input));
-                    objCmd12.Parameters.Add(new OracleParameter("5", OracleDbType.Varchar2, puerto_anterior, ParameterDirection.Input));
-                    objCmd12.Parameters.Add(new OracleParameter("6", OracleDbType.Decimal, check, ParameterDirection.Input));
-                    
-                    objCmd12.ExecuteNonQuery();
+                    insertOld();
                     objConn.Close();
                 }
 
@@ -335,29 +294,11 @@ namespace Strategy_Manager
             s = servidor;
             if (alive == "1") { checkBox1.Checked = true; } else { checkBox1.Checked = false; }
         }
-        public void dropCreateDL()
+        public void insertNew()
         {
             using (OracleConnection objConn = new OracleConnection(ConfigurationManager.AppSettings["connectionString"]))
             {
                 String generaId = "C_" + nombreServidor.Text + baseDatos.Text;
-                OracleCommand objCmd = new OracleCommand();
-                objCmd.Connection = objConn;
-                objCmd.CommandText = "drop database link " + generaId;
-               // objCmd.Parameters.Add(new OracleParameter("1", generaId));
-
-
-                OracleCommand objCmd3 = new OracleCommand();
-                objCmd3.Connection = objConn;
-                objCmd3.CommandText = "create database link " + "C_" + nombreServidor.Text + baseDatos.Text + "\n" +
-                                       "connect to SYSTEM identified by MANAGER \n" +
-                                        "using \n" +
-                                       "'(DESCRIPTION = \n" +
-                                        "(ADDRESS = (PROTOCOL = TCP)(HOST = " + ip_base.Text + ")(PORT =" + puerto.Text + ")) \n" +
-                                        "(CONNECT_DATA = \n" +
-                                        "(SERVER = DEDICATED) \n" +
-                                        "(SERVICE_NAME = XE) \n " +
-                                        ") \n" +
-                                        ")' \n ";
 
                 String number;
                 if (checkBox1.Checked) { number = "1"; } else { number = "0"; }
@@ -374,7 +315,8 @@ namespace Strategy_Manager
 
                 OracleCommand objCmd6 = new OracleCommand();
                 objCmd6.Connection = objConn;
-                objCmd6.CommandText = "insert into connection@" + generaId + " values(:1,:2,:3,:4,:5,:6)";
+                objCmd6.CommandText = "insert_connectionRemote";
+                objCmd6.CommandType = CommandType.StoredProcedure;
                 objCmd6.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, generaId, ParameterDirection.Input));
                 objCmd6.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, nombreServidor.Text, ParameterDirection.Input));
                 objCmd6.Parameters.Add(new OracleParameter("3", OracleDbType.Varchar2, baseDatos.Text, ParameterDirection.Input));
@@ -384,8 +326,7 @@ namespace Strategy_Manager
 
                 try {
                     objConn.Open();
-                    objCmd.ExecuteNonQuery();
-                    objCmd3.ExecuteNonQuery();
+                    dropCreateDL();
                     objCmd6.ExecuteNonQuery();
                     objCmd7.ExecuteNonQuery();
     
@@ -406,12 +347,13 @@ namespace Strategy_Manager
         {
             using (OracleConnection objConn = new OracleConnection(ConfigurationManager.AppSettings["connectionString"]))
             {
+                System.Windows.Forms.MessageBox.Show("Error Connection");
                 String generaId = "C_" + nombreServidor.Text + baseDatos.Text;
                 OracleCommand objCmd = new OracleCommand();
                 objCmd.Connection = objConn;
-                objCmd.CommandText = "drop database link " + generaId;
+                objCmd.CommandText = "dropDL";
+                objCmd.CommandType = CommandType.StoredProcedure;
                 objCmd.Parameters.Add(new OracleParameter("1", generaId));
-
 
                 OracleCommand objCmd3 = new OracleCommand();
                 objCmd3.Connection = objConn;
@@ -426,17 +368,74 @@ namespace Strategy_Manager
                                         ") \n" +
                                         ")' \n ";
 
-                try
-                {
-                    objConn.Open();
-                    objCmd.ExecuteNonQuery();
-                    objCmd3.ExecuteNonQuery();
+                objConn.Open();
+                objCmd.ExecuteNonQuery();
+                objCmd3.ExecuteNonQuery();
 
-                }
-                catch (Exception ex)
-                {
+                objConn.Close();
+                objConn.Dispose();
+            }
+        }
+        public void dropCreateDL()
+        {
+            using (OracleConnection objConn = new OracleConnection(ConfigurationManager.AppSettings["connectionString"]))
+            {
+                String generaId = "C_" + nombreServidor.Text + baseDatos.Text;
+                OracleCommand objCmd = new OracleCommand();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "dropDL";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add(new OracleParameter("1", generaId));
 
-                }
+                OracleCommand objCmd3 = new OracleCommand();
+                objCmd3.Connection = objConn;
+                objCmd3.CommandText = "create database link " + generaId+ "\n" +
+                                       "connect to SYSTEM identified by MANAGER \n" +
+                                        "using \n" +
+                                       "'(DESCRIPTION = \n" +
+                                        "(ADDRESS = (PROTOCOL = TCP)(HOST = " + ip_base.Text + ")(PORT =" + puerto.Text + ")) \n" +
+                                        "(CONNECT_DATA = \n" +
+                                        "(SERVER = DEDICATED) \n" +
+                                        "(SERVICE_NAME = XE) \n " +
+                                        ") \n" +
+                                        ")' \n ";
+
+                objConn.Open();
+                objCmd.ExecuteNonQuery();
+                objCmd3.ExecuteNonQuery();
+                objConn.Close();
+                objConn.Dispose();
+            }
+        }
+        public void insertOld() {
+            using (OracleConnection objConn = new OracleConnection(ConfigurationManager.AppSettings["connectionString"]))
+            {
+                String generaId = "C_" + nombreServidor.Text + baseDatos.Text;
+                OracleCommand objCmd11 = new OracleCommand();
+                objCmd11.Connection = objConn;
+                objCmd11.CommandText = "insert_connection";
+                objCmd11.CommandType = CommandType.StoredProcedure;
+                objCmd11.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, generaId, ParameterDirection.Input));
+                objCmd11.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, nombreServidor.Text, ParameterDirection.Input));
+                objCmd11.Parameters.Add(new OracleParameter("3", OracleDbType.Varchar2, baseDatos.Text, ParameterDirection.Input));
+                objCmd11.Parameters.Add(new OracleParameter("4", OracleDbType.Varchar2, ip_anterior, ParameterDirection.Input));
+                objCmd11.Parameters.Add(new OracleParameter("5", OracleDbType.Varchar2, puerto_anterior, ParameterDirection.Input));
+                objCmd11.Parameters.Add(new OracleParameter("6", OracleDbType.Decimal, check, ParameterDirection.Input));
+
+                OracleCommand objCmd12 = new OracleCommand();
+                objCmd12.Connection = objConn;
+                objCmd12.CommandText = "insert_connectionRemote";
+                objCmd12.CommandType = CommandType.StoredProcedure;
+                objCmd12.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, generaId, ParameterDirection.Input));
+                objCmd12.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, nombreServidor.Text, ParameterDirection.Input));
+                objCmd12.Parameters.Add(new OracleParameter("3", OracleDbType.Varchar2, baseDatos.Text, ParameterDirection.Input));
+                objCmd12.Parameters.Add(new OracleParameter("4", OracleDbType.Varchar2, ip_anterior, ParameterDirection.Input));
+                objCmd12.Parameters.Add(new OracleParameter("5", OracleDbType.Varchar2, puerto_anterior, ParameterDirection.Input));
+                objCmd12.Parameters.Add(new OracleParameter("6", OracleDbType.Decimal, check, ParameterDirection.Input));
+
+                objConn.Open();
+                objCmd11.ExecuteNonQuery();
+                objCmd12.ExecuteNonQuery();
                 objConn.Close();
                 objConn.Dispose();
             }
