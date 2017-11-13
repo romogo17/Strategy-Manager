@@ -125,7 +125,16 @@ CREATE OR REPLACE PROCEDURE insert_strategy(name in varchar2, connection in varc
        WHEN OTHERS THEN ROLLBACK;
 END;
 /
-
+--Procedimiento para actualizar una estrategia
+CREATE OR REPLACE PROCEDURE update_strategy(name in varchar2, connection1 in varchar2, priori in varchar2,alive1 in number)
+   IS
+   BEGIN
+      update strategy set connection=connection1, priority=priori ,alive=alive1 where strategy_id=name;
+      COMMIT;
+      EXCEPTION
+       WHEN OTHERS THEN ROLLBACK;
+END;
+/
  --Funcion para conseguir las estrategias
 create or replace function get_strategy(strategy in varchar2)
    return SYS_REFCURSOR IS
@@ -143,6 +152,15 @@ create or replace function get_log(strategy in varchar2)
     BEGIN
      OPEN cr FOR SELECT * from log STRATEGY WHERE strategy_id =strategy ;
      RETURN cr;
+   END;
+/
+ --Funcion para conseguir cantidad de logs de una estrategia
+create or replace function get_logCount(strategy in varchar2)
+   return number IS
+   countLogs number;
+    BEGIN
+      SELECT count(*) into countLogs from log STRATEGY WHERE strategy_id =strategy ;
+     RETURN countLogs;
    END;
 /
 --Function para conseguir los errores de las estrategias
@@ -188,7 +206,17 @@ CREATE OR REPLACE PROCEDURE insert_strategyRemote(name in varchar2, connection i
        WHEN OTHERS THEN ROLLBACK;
 END;
 /
-
+--Procedimiento para actualizar una estrategiaRemota 
+CREATE OR REPLACE PROCEDURE update_strategyRemote(name in varchar2, connection in varchar2, priori in varchar2,alive1 in number)
+IS   
+   BEGIN
+   EXECUTE IMMEDIATE 'update strategy@'||connection|| ' set alive=' || alive1 ||' where strategy_id=''' || name ||'''';
+   COMMIT;
+      EXCEPTION
+     WHEN OTHERS THEN ROLLBACK;
+     
+END;
+/
 --Ejemplo de data link
 create database link TEST
 connect to system identified by manager

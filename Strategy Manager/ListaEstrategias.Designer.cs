@@ -92,7 +92,7 @@
             this.crearEstrategiaDeRespaldoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.J)));
             this.crearEstrategiaDeRespaldoToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.crearEstrategiaDeRespaldoToolStripMenuItem.Text = "Edit Strategies";
-
+            this.crearEstrategiaDeRespaldoToolStripMenuItem.Click += new System.EventHandler(this.editaEstrategiaDeRespaldoToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -262,8 +262,23 @@
                 lista.ShowDialog();
                
             }
-        } 
+        }
 
+        private void editaEstrategiaDeRespaldoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int index = dataGridView1.CurrentCell.RowIndex;
+            if (index >= 0)
+            {
+                DataGridViewRow row = this.dataGridView1.Rows[index];
+                String idEstrategia = row.Cells["STRATEGY_ID"].Value.ToString();
+                String priority1 = row.Cells["PRIORITY"].Value.ToString();
+                String activo = row.Cells["ALIVE"].Value.ToString();
+                EditarEstrategia editStrategy= new EditarEstrategia(this, connection, servidor, instancia,idEstrategia,priority1,activo);
+                editStrategy.ShowDialog();
+
+
+            }
+        }
         /* private void editarBaseDatosToolStripMenuItem_click(object sender, EventArgs e)
         {
             try

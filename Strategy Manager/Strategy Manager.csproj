@@ -120,6 +120,12 @@
     <Compile Include="ConsultaLog.Designer.cs">
       <DependentUpon>ConsultaLog.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditarEstrategia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarEstrategia.Designer.cs">
+      <DependentUpon>EditarEstrategia.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListaLogs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaLog.resx">
       <DependentUpon>ConsultaLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarEstrategia.resx">
+      <DependentUpon>EditarEstrategia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaLogs.resx">
       <DependentUpon>ListaLogs.cs</DependentUpon>
