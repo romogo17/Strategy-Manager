@@ -45,6 +45,7 @@ namespace Strategy_Manager
             this.strategyIdTfd = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -159,6 +160,16 @@ namespace Strategy_Manager
             this.label11.TabIndex = 11;
             this.label11.Text = "Active/Deactive";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(133, 261);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 12;
+            this.btnDelete.Text = "Borrar";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.Delete_Click);
+            // 
             // EditarEstrategia
             // 
             this.AcceptButton = this.button1;
@@ -167,6 +178,7 @@ namespace Strategy_Manager
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(382, 311);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -255,7 +267,6 @@ namespace Strategy_Manager
                 objConn.Close();
                 objConn.Dispose();
             }
-
         }
         public void solicitaLogs(String estrategia)
         {
@@ -270,12 +281,14 @@ namespace Strategy_Manager
                 // Set parameters
                 OracleParameter retParam = objCmd.Parameters.Add("return_value", OracleDbType.Decimal, ParameterDirection.ReturnValue);
                 objCmd.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, estrategia, ParameterDirection.Input));
-
+                String logs;
                 try
                 {
                     objConn.Open();
                     objCmd.ExecuteNonQuery();
-                    //System.Windows.Forms.MessageBox.Show("Logs: "+ retParam.Value);
+                    logs= ("" + retParam.Value);
+                    if (logs=="0") { btnDelete.Visible = true; } else { btnDelete.Visible = false; }
+                    System.Windows.Forms.MessageBox.Show("Logs: "+ logs);
                 }
                 catch (Exception ex)
                 {
@@ -292,9 +305,77 @@ namespace Strategy_Manager
             this.Close();
             //this.Dispose();
         }
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            using (OracleConnection objConn = new OracleConnection(ConfigurationManager.AppSettings["connectionString"]))
+            {
+                String generaId = "C_" + strategyIdTfd.Text + connectionTfd.Text; ;
+
+                OracleCommand objCmd = new OracleCommand();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "delete from frequency where STRATEGY_ID =:1";
+                objCmd.Parameters.Add(new OracleParameter("1", strategyIdTfd.Text));
+
+                OracleCommand objCmd1 = new OracleCommand();
+                objCmd1.Connection = objConn;
+                objCmd1.CommandText = "delete from strategy_line where  STRATEGY_ID =:1";
+                objCmd1.Parameters.Add(new OracleParameter("1", strategyIdTfd.Text));
+
+                OracleCommand objCmd2 = new OracleCommand();
+                objCmd2.Connection = objConn;
+                objCmd2.CommandText = "delete from strategy where  STRATEGY_ID =:1";
+                objCmd2.Parameters.Add(new OracleParameter("1", strategyIdTfd.Text));
+
+                OracleCommand objCmd3 = new OracleCommand();
+                objCmd3.Connection = objConn;
+                objCmd3.CommandText = "delete_frequencyRemote";
+                objCmd3.CommandType = CommandType.StoredProcedure;
+                objCmd3.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, strategyIdTfd.Text, ParameterDirection.Input));
+                objCmd3.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, connectionTfd.Text, ParameterDirection.Input));
+
+                OracleCommand objCmd4 = new OracleCommand();
+                objCmd4.Connection = objConn;
+                objCmd4.CommandText = "delete_strategyLineRemote";
+                objCmd4.CommandType = CommandType.StoredProcedure;
+                objCmd4.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, strategyIdTfd.Text, ParameterDirection.Input));
+                objCmd4.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, connectionTfd.Text, ParameterDirection.Input));
+
+                OracleCommand objCmd5 = new OracleCommand();
+                objCmd5.Connection = objConn;
+                objCmd5.CommandText = "delete_strategyRemote";
+                objCmd5.CommandType = CommandType.StoredProcedure;
+                objCmd5.Parameters.Add(new OracleParameter("1", OracleDbType.Varchar2, strategyIdTfd.Text, ParameterDirection.Input));
+                objCmd5.Parameters.Add(new OracleParameter("2", OracleDbType.Varchar2, connectionTfd.Text, ParameterDirection.Input));
+
+                try
+                {
+                    objConn.Open();
+                    //objCmd.ExecuteNonQuery();
+                    //objCmd1.ExecuteNonQuery();
+                    //objCmd2.ExecuteNonQuery();
+                    objCmd3.ExecuteNonQuery();
+                    objCmd4.ExecuteNonQuery();
+                    objCmd5.ExecuteNonQuery();
+                    app.solicitaEstrategias(connectionTfd.Text);
+                    this.Close();
+                    System.Windows.Forms.MessageBox.Show("Strategy deleted successfully");
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show("Error");
+                    objConn.Close();
+                }
+
+                objConn.Close();
+                objConn.Dispose();
+            }
+            app.editNuevaEstrategia(strategyIdTfd.Text);
+            System.Windows.Forms.MessageBox.Show("Strategy:" +strategyIdTfd.Text);
+        }
+
         private System.Windows.Forms.TextBox strategyIdTfd;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label11;
-
+        private System.Windows.Forms.Button btnDelete;
     }
 }

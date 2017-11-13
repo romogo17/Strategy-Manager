@@ -1362,7 +1362,9 @@ namespace Strategy_Manager
             var dateTime = DateTime.Now;
             var dateTimeOffset = new DateTimeOffset(dateTime);
             var unixDateTime = dateTimeOffset.ToUnixTimeSeconds().ToString();
-            String idstrategy = "EST_" + unixDateTime;
+            String idstrategy;
+            if (idEstrategia1 == "") {idstrategy = "EST_" + unixDateTime; }
+            else { idstrategy = idEstrategia1; }
             backupScript.Add("}");
             if (runTime.Count >= 1)
             {
@@ -1611,5 +1613,6 @@ namespace Strategy_Manager
             this.Close();
             //this.Dispose();
         }
+        private String idEstrategia1;
     }
 }

@@ -284,4 +284,35 @@ IS
      
 END;
 /
+--Procedimientos para borrar estrategias que no se hayan ejecutado
 
+CREATE OR REPLACE PROCEDURE delete_frequencyRemote(strategy_id in varchar2,connection1 in varchar2)
+IS   
+   BEGIN
+   EXECUTE IMMEDIATE 'delete from frequency@' || connection1 || ' where STRATEGY_ID=''' || strategy_id ||'''';
+   COMMIT;
+      EXCEPTION
+     WHEN OTHERS THEN ROLLBACK;
+     
+END;
+/
+CREATE OR REPLACE PROCEDURE delete_strategyLineRemote(strategy_id in varchar2,connection1 in varchar2)
+IS   
+   BEGIN
+   EXECUTE IMMEDIATE 'delete from strategy_line@' || connection1 || ' where STRATEGY_ID=''' || strategy_id ||'''';
+   COMMIT;
+      EXCEPTION
+     WHEN OTHERS THEN ROLLBACK;
+     
+END;
+/
+CREATE OR REPLACE PROCEDURE delete_strategyRemote(strategy_id in varchar2,connection1  in varchar2)
+IS   
+   BEGIN
+   EXECUTE IMMEDIATE 'delete from strategy@' || connection1 || ' where STRATEGY_ID=''' || strategy_id ||'''';
+   COMMIT;
+      EXCEPTION
+     WHEN OTHERS THEN ROLLBACK;
+     
+END;
+/

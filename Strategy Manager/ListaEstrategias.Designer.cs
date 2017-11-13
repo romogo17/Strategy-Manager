@@ -247,10 +247,14 @@
 
         private void registrarEstrategias_click(object sender, EventArgs e)
         {
-            CrearEstrategia ce = new CrearEstrategia(this,connection, servidor, instancia);
+            CrearEstrategia ce = new CrearEstrategia(this,connection, servidor, instancia,"");
             ce.ShowDialog(this);
         }
-
+        public void editNuevaEstrategia(String estregiaOld)
+        {
+            CrearEstrategia ce = new CrearEstrategia(this, connection, servidor, instancia,estregiaOld);
+            ce.ShowDialog(this);
+        }
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
            
