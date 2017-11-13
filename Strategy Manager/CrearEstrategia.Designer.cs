@@ -1244,9 +1244,9 @@ namespace Strategy_Manager
         {
             if (backupTablespaces.SelectedItem != null)
             {
-                tablespaces.Items.Add(backupTablespaces.SelectedItem);
+                tablespaces.Items.Add(backupTablespaces.SelectedItem);   
+                backupScript.Remove("backup tablespace " + backupTablespaces.SelectedItem.ToString().ToLower() + ";");
                 backupTablespaces.Items.Remove(backupTablespaces.SelectedItem);
-                backupScript.Remove("backup tablespace " + tablespaces.SelectedItem.ToString().ToLower() + ";");
             }
         }
 
@@ -1402,7 +1402,7 @@ namespace Strategy_Manager
                 if (minute < 0 && minute > 59)
                     minute = 59;
                 insertFrecuency(idstrategy, time, hour, minute);
-                //insertFrecuencyRemote(idstrategy, connection, time, hour, minute);
+                insertFrecuencyRemote(idstrategy, connection, time, hour, minute);
             }
         }
 
@@ -1412,7 +1412,9 @@ namespace Strategy_Manager
             var dateTime = DateTime.Now;
             var dateTimeOffset = new DateTimeOffset(dateTime);
             var unixDateTime = dateTimeOffset.ToUnixTimeSeconds().ToString();
-            String idstrategy = "EST_" + unixDateTime;
+            String idstrategy;
+            if (idEstrategia1 == "") {idstrategy = "EST_" + unixDateTime; }
+            else { idstrategy = idEstrategia1; }
             backupScript.Add("}");
             if (runTime.Count >= 1)
             {
@@ -1420,12 +1422,12 @@ namespace Strategy_Manager
                 {
                     priority = prioritySelected();
                     insertStrategies(idstrategy, connection, priority);
-                    //insertStrategiesRemote(idstrategy, connection, priority);
+                    insertStrategiesRemote(idstrategy, connection, priority);
                     int cont = 0;
                     foreach (string scriptline in backupScript)
                     {
                         insertStrategiesLines(idstrategy, cont, scriptline);
-                        //insertStrategiesLinesRemote(idstrategy, cont, scriptline, connection);
+                        insertStrategiesLinesRemote(idstrategy, cont, scriptline, connection);
                         cont++;
                     }
                     saveRunningTime(idstrategy, connection);
@@ -1661,5 +1663,6 @@ namespace Strategy_Manager
             this.Close();
             //this.Dispose();
         }
+        private String idEstrategia1;
     }
 }

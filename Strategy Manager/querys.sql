@@ -261,7 +261,6 @@ CREATE OR REPLACE PROCEDURE insert_connectionRemote(id in varchar2, nombreServid
       EXECUTE IMMEDIATE 'insert into connection@' || id || ' values(''' || id || ''',''' || nombreServidor || ''',''' || baseDatos || ''',''' || ipBase || ''',''' || puertoBase || ''',' || alive || ')';
 	  COMMIT; --Necesito que esto me tira la EXCEPTION si falla para poder comprobar la conexion
   END;
-  
 /
 --Procedimiento para bajar un datalink
 CREATE OR REPLACE PROCEDURE dropDL(name in varchar2)
@@ -269,8 +268,7 @@ CREATE OR REPLACE PROCEDURE dropDL(name in varchar2)
    BEGIN
    --EXECUTE IMMEDIATE 'ALTER SESSION CLOSE DATABASE LINK ' || name;
    EXECUTE IMMEDIATE 'drop database link ' || name;
-   COMMIT;
-     
+   COMMIT;   
 END;
 /
 --Procedimiento para eliminar una conexion remotam
@@ -281,7 +279,34 @@ IS
    COMMIT;
       EXCEPTION
      WHEN OTHERS THEN ROLLBACK;
-     
 END;
 /
+--Procedimientos para borrar estrategias que no se hayan ejecutado
 
+CREATE OR REPLACE PROCEDURE delete_frequencyRemote(strategy_id in varchar2,connection1 in varchar2)
+IS   
+   BEGIN
+   EXECUTE IMMEDIATE 'delete from frequency@' || connection1 || ' where STRATEGY_ID=''' || strategy_id ||'''';
+   COMMIT;
+      EXCEPTION
+     WHEN OTHERS THEN ROLLBACK;
+END;
+/
+CREATE OR REPLACE PROCEDURE delete_strategyLineRemote(strategy_id in varchar2,connection1 in varchar2)
+IS   
+   BEGIN
+   EXECUTE IMMEDIATE 'delete from strategy_line@' || connection1 || ' where STRATEGY_ID=''' || strategy_id ||'''';
+   COMMIT;
+      EXCEPTION
+     WHEN OTHERS THEN ROLLBACK;
+END;
+/
+CREATE OR REPLACE PROCEDURE delete_strategyRemote(strategy_id in varchar2,connection1  in varchar2)
+IS   
+   BEGIN
+   EXECUTE IMMEDIATE 'delete from strategy@' || connection1 || ' where STRATEGY_ID=''' || strategy_id ||'''';
+   COMMIT;
+      EXCEPTION
+     WHEN OTHERS THEN ROLLBACK;
+END;
+/

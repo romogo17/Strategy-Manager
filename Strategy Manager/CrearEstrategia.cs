@@ -12,7 +12,7 @@ namespace Strategy_Manager
 {
     public partial class CrearEstrategia : Form
     {
-        public CrearEstrategia(ListaEstrategia application, String conexion, String servidor, String instancia)
+        public CrearEstrategia(ListaEstrategia application, String conexion, String servidor, String instancia,String estrategiaOld)
         {
             InitializeComponent();
             dbInstance.Text = "Database Instance: " + instancia;
@@ -21,6 +21,7 @@ namespace Strategy_Manager
             solicitaTablespaces(connection);
             app = application;
             backupScript.Add("run{");
+            idEstrategia1 = estrategiaOld;
 
         }
     }
