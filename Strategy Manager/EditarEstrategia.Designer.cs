@@ -350,9 +350,9 @@ namespace Strategy_Manager
                 try
                 {
                     objConn.Open();
-                    //objCmd.ExecuteNonQuery();
-                    //objCmd1.ExecuteNonQuery();
-                    //objCmd2.ExecuteNonQuery();
+                    objCmd.ExecuteNonQuery();
+                    objCmd1.ExecuteNonQuery();
+                    objCmd2.ExecuteNonQuery();
                     objCmd3.ExecuteNonQuery();
                     objCmd4.ExecuteNonQuery();
                     objCmd5.ExecuteNonQuery();

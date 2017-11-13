@@ -1194,9 +1194,9 @@ namespace Strategy_Manager
         {
             if (backupTablespaces.SelectedItem != null)
             {
-                tablespaces.Items.Add(backupTablespaces.SelectedItem);
-                backupTablespaces.Items.Remove(backupTablespaces.SelectedItem);
+                tablespaces.Items.Add(backupTablespaces.SelectedItem);   
                 backupScript.Remove("backup tablespace " + tablespaces.SelectedItem.ToString().ToLower() + ";");
+                backupTablespaces.Items.Remove(backupTablespaces.SelectedItem);
             }
         }
 
@@ -1352,7 +1352,7 @@ namespace Strategy_Manager
                 if (minute < 0 && minute > 59)
                     minute = 59;
                 insertFrecuency(idstrategy, time, hour, minute);
-                //insertFrecuencyRemote(idstrategy, connection, time, hour, minute);
+                insertFrecuencyRemote(idstrategy, connection, time, hour, minute);
             }
         }
 
@@ -1372,12 +1372,12 @@ namespace Strategy_Manager
                 {
                     priority = prioritySelected();
                     insertStrategies(idstrategy, connection, priority);
-                    //insertStrategiesRemote(idstrategy, connection, priority);
+                    insertStrategiesRemote(idstrategy, connection, priority);
                     int cont = 0;
                     foreach (string scriptline in backupScript)
                     {
                         insertStrategiesLines(idstrategy, cont, scriptline);
-                        //insertStrategiesLinesRemote(idstrategy, cont, scriptline, connection);
+                        insertStrategiesLinesRemote(idstrategy, cont, scriptline, connection);
                         cont++;
                     }
                     saveRunningTime(idstrategy, connection);
