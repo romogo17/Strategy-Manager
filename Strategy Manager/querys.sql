@@ -187,7 +187,7 @@ CREATE OR REPLACE PROCEDURE insert_strategyline(strategy_id in varchar2, nline i
 --Procedimiento para insertar una lineaEstrategiaRemota (No sirve)
 CREATE OR REPLACE PROCEDURE insert_strategyline(strategy_id in varchar2, nline in int, line in varchar2)
   IS
-  varchar2 D:='insert into strategy_line@' ||  values (strategy_id, nline, line);
+  --varchar2 D := 'insert into strategy_line@' ||  values (strategy_id, nline, line);
   BEGIN
     insert into strategy_line(strategy_id,numline,line) values (strategy_id, nline, line);
     COMMIT;
@@ -200,7 +200,7 @@ CREATE OR REPLACE PROCEDURE insert_strategyline(strategy_id in varchar2, nline i
 CREATE OR REPLACE PROCEDURE insert_strategyRemote(name in varchar2, connection in varchar2, priori in varchar2)
    IS
    BEGIN
-      Execute inmedita 'insert into strategy@' || connection || ' values(''' || name || ''',''' || connection || ''',''' || priori || ''')';
+      Execute IMMEDIATE 'insert into strategy@' || connection || ' values(''' || name || ''',''' || connection || ''',''' || priori || ''')';
 	  COMMIT;
       EXCEPTION
        WHEN OTHERS THEN ROLLBACK;

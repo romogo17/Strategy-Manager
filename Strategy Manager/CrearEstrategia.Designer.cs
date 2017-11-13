@@ -126,9 +126,10 @@ namespace Strategy_Manager
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(437, 847);
+            this.button1.Location = new System.Drawing.Point(589, 804);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 2;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
@@ -137,9 +138,10 @@ namespace Strategy_Manager
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(518, 847);
+            this.button2.Location = new System.Drawing.Point(702, 804);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 3;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
@@ -148,7 +150,8 @@ namespace Strategy_Manager
             // picture
             // 
             this.picture.Image = ((System.Drawing.Image)(resources.GetObject("picture.Image")));
-            this.picture.Location = new System.Drawing.Point(273, 120);
+            this.picture.Location = new System.Drawing.Point(364, 148);
+            this.picture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picture.Name = "picture";
             this.picture.Size = new System.Drawing.Size(64, 64);
             this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -160,10 +163,9 @@ namespace Strategy_Manager
             this.bdServer.AutoSize = true;
             this.bdServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bdServer.ForeColor = System.Drawing.Color.White;
-            this.bdServer.Location = new System.Drawing.Point(22, 63);
-            this.bdServer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bdServer.Location = new System.Drawing.Point(29, 78);
             this.bdServer.Name = "bdServer";
-            this.bdServer.Size = new System.Drawing.Size(63, 20);
+            this.bdServer.Size = new System.Drawing.Size(81, 25);
             this.bdServer.TabIndex = 17;
             this.bdServer.Text = "Server: ";
             // 
@@ -172,10 +174,9 @@ namespace Strategy_Manager
             this.dbInstance.AutoSize = true;
             this.dbInstance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dbInstance.ForeColor = System.Drawing.Color.White;
-            this.dbInstance.Location = new System.Drawing.Point(22, 83);
-            this.dbInstance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.dbInstance.Location = new System.Drawing.Point(29, 102);
             this.dbInstance.Name = "dbInstance";
-            this.dbInstance.Size = new System.Drawing.Size(149, 20);
+            this.dbInstance.Size = new System.Drawing.Size(181, 25);
             this.dbInstance.TabIndex = 18;
             this.dbInstance.Text = "Database Instance:";
             // 
@@ -184,10 +185,9 @@ namespace Strategy_Manager
             this.typeBackup.AutoSize = true;
             this.typeBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.typeBackup.ForeColor = System.Drawing.Color.White;
-            this.typeBackup.Location = new System.Drawing.Point(23, 120);
-            this.typeBackup.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.typeBackup.Location = new System.Drawing.Point(31, 148);
             this.typeBackup.Name = "typeBackup";
-            this.typeBackup.Size = new System.Drawing.Size(119, 18);
+            this.typeBackup.Size = new System.Drawing.Size(151, 24);
             this.typeBackup.TabIndex = 23;
             this.typeBackup.Text = "Type of Backup: ";
             // 
@@ -196,9 +196,10 @@ namespace Strategy_Manager
             this.strategiesTitle.AutoSize = true;
             this.strategiesTitle.Font = new System.Drawing.Font("Arial Narrow", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.strategiesTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.strategiesTitle.Location = new System.Drawing.Point(19, 9);
+            this.strategiesTitle.Location = new System.Drawing.Point(25, 11);
+            this.strategiesTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.strategiesTitle.Name = "strategiesTitle";
-            this.strategiesTitle.Size = new System.Drawing.Size(147, 42);
+            this.strategiesTitle.Size = new System.Drawing.Size(185, 52);
             this.strategiesTitle.TabIndex = 24;
             this.strategiesTitle.Text = "Strategies";
             // 
@@ -207,9 +208,10 @@ namespace Strategy_Manager
             this.fullBackupCB.AutoSize = true;
             this.fullBackupCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fullBackupCB.ForeColor = System.Drawing.Color.White;
-            this.fullBackupCB.Location = new System.Drawing.Point(144, 146);
+            this.fullBackupCB.Location = new System.Drawing.Point(192, 180);
+            this.fullBackupCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fullBackupCB.Name = "fullBackupCB";
-            this.fullBackupCB.Size = new System.Drawing.Size(97, 20);
+            this.fullBackupCB.Size = new System.Drawing.Size(119, 24);
             this.fullBackupCB.TabIndex = 25;
             this.fullBackupCB.Text = "Full Backup";
             this.fullBackupCB.UseVisualStyleBackColor = true;
@@ -220,9 +222,10 @@ namespace Strategy_Manager
             this.incrementalBackupCB.AutoSize = true;
             this.incrementalBackupCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incrementalBackupCB.ForeColor = System.Drawing.Color.White;
-            this.incrementalBackupCB.Location = new System.Drawing.Point(247, 146);
+            this.incrementalBackupCB.Location = new System.Drawing.Point(329, 180);
+            this.incrementalBackupCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.incrementalBackupCB.Name = "incrementalBackupCB";
-            this.incrementalBackupCB.Size = new System.Drawing.Size(145, 20);
+            this.incrementalBackupCB.Size = new System.Drawing.Size(179, 24);
             this.incrementalBackupCB.TabIndex = 27;
             this.incrementalBackupCB.Text = "Incremental Backup";
             this.incrementalBackupCB.UseVisualStyleBackColor = true;
@@ -233,9 +236,10 @@ namespace Strategy_Manager
             this.level0.AutoSize = true;
             this.level0.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.level0.ForeColor = System.Drawing.Color.White;
-            this.level0.Location = new System.Drawing.Point(150, 40);
+            this.level0.Location = new System.Drawing.Point(200, 49);
+            this.level0.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.level0.Name = "level0";
-            this.level0.Size = new System.Drawing.Size(69, 20);
+            this.level0.Size = new System.Drawing.Size(84, 24);
             this.level0.TabIndex = 0;
             this.level0.TabStop = true;
             this.level0.Text = "Level 0";
@@ -247,9 +251,10 @@ namespace Strategy_Manager
             this.level1.AutoSize = true;
             this.level1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.level1.ForeColor = System.Drawing.Color.White;
-            this.level1.Location = new System.Drawing.Point(225, 40);
+            this.level1.Location = new System.Drawing.Point(300, 49);
+            this.level1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.level1.Name = "level1";
-            this.level1.Size = new System.Drawing.Size(69, 20);
+            this.level1.Size = new System.Drawing.Size(84, 24);
             this.level1.TabIndex = 1;
             this.level1.TabStop = true;
             this.level1.Text = "Level 1";
@@ -261,9 +266,10 @@ namespace Strategy_Manager
             this.partialBackupCB.AutoSize = true;
             this.partialBackupCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.partialBackupCB.ForeColor = System.Drawing.Color.White;
-            this.partialBackupCB.Location = new System.Drawing.Point(398, 146);
+            this.partialBackupCB.Location = new System.Drawing.Point(531, 180);
+            this.partialBackupCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.partialBackupCB.Name = "partialBackupCB";
-            this.partialBackupCB.Size = new System.Drawing.Size(114, 20);
+            this.partialBackupCB.Size = new System.Drawing.Size(140, 24);
             this.partialBackupCB.TabIndex = 32;
             this.partialBackupCB.Text = "Partial Backup";
             this.partialBackupCB.UseVisualStyleBackColor = true;
@@ -274,9 +280,10 @@ namespace Strategy_Manager
             this.controlCheckBox.AutoSize = true;
             this.controlCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.controlCheckBox.ForeColor = System.Drawing.Color.White;
-            this.controlCheckBox.Location = new System.Drawing.Point(198, 42);
+            this.controlCheckBox.Location = new System.Drawing.Point(264, 52);
+            this.controlCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.controlCheckBox.Name = "controlCheckBox";
-            this.controlCheckBox.Size = new System.Drawing.Size(69, 20);
+            this.controlCheckBox.Size = new System.Drawing.Size(85, 24);
             this.controlCheckBox.TabIndex = 33;
             this.controlCheckBox.Text = "Control";
             this.controlCheckBox.UseVisualStyleBackColor = true;
@@ -287,9 +294,10 @@ namespace Strategy_Manager
             this.spfileCheckBox.AutoSize = true;
             this.spfileCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.spfileCheckBox.ForeColor = System.Drawing.Color.White;
-            this.spfileCheckBox.Location = new System.Drawing.Point(291, 42);
+            this.spfileCheckBox.Location = new System.Drawing.Point(388, 52);
+            this.spfileCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.spfileCheckBox.Name = "spfileCheckBox";
-            this.spfileCheckBox.Size = new System.Drawing.Size(61, 20);
+            this.spfileCheckBox.Size = new System.Drawing.Size(73, 24);
             this.spfileCheckBox.TabIndex = 34;
             this.spfileCheckBox.Text = "Spfile";
             this.spfileCheckBox.UseVisualStyleBackColor = true;
@@ -302,10 +310,11 @@ namespace Strategy_Manager
             this.tablespaces.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tablespaces.ForeColor = System.Drawing.Color.Black;
             this.tablespaces.FormattingEnabled = true;
-            this.tablespaces.ItemHeight = 16;
-            this.tablespaces.Location = new System.Drawing.Point(118, 106);
+            this.tablespaces.ItemHeight = 20;
+            this.tablespaces.Location = new System.Drawing.Point(157, 130);
+            this.tablespaces.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tablespaces.Name = "tablespaces";
-            this.tablespaces.Size = new System.Drawing.Size(149, 96);
+            this.tablespaces.Size = new System.Drawing.Size(199, 100);
             this.tablespaces.TabIndex = 36;
             this.tablespaces.MouseClick += new System.Windows.Forms.MouseEventHandler(this.click_tablespace);
             // 
@@ -314,9 +323,10 @@ namespace Strategy_Manager
             this.tablespacesList.AutoSize = true;
             this.tablespacesList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tablespacesList.ForeColor = System.Drawing.Color.White;
-            this.tablespacesList.Location = new System.Drawing.Point(92, 75);
+            this.tablespacesList.Location = new System.Drawing.Point(123, 92);
+            this.tablespacesList.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tablespacesList.Name = "tablespacesList";
-            this.tablespacesList.Size = new System.Drawing.Size(89, 16);
+            this.tablespacesList.Size = new System.Drawing.Size(104, 20);
             this.tablespacesList.TabIndex = 37;
             this.tablespacesList.Text = "Tablespaces";
             // 
@@ -327,10 +337,11 @@ namespace Strategy_Manager
             this.backupTablespaces.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backupTablespaces.ForeColor = System.Drawing.Color.Black;
             this.backupTablespaces.FormattingEnabled = true;
-            this.backupTablespaces.ItemHeight = 16;
-            this.backupTablespaces.Location = new System.Drawing.Point(343, 106);
+            this.backupTablespaces.ItemHeight = 20;
+            this.backupTablespaces.Location = new System.Drawing.Point(457, 130);
+            this.backupTablespaces.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.backupTablespaces.Name = "backupTablespaces";
-            this.backupTablespaces.Size = new System.Drawing.Size(149, 96);
+            this.backupTablespaces.Size = new System.Drawing.Size(199, 100);
             this.backupTablespaces.TabIndex = 38;
             this.backupTablespaces.MouseClick += new System.Windows.Forms.MouseEventHandler(this.click_tablespaceRespaldo);
             // 
@@ -339,9 +350,10 @@ namespace Strategy_Manager
             this.sunday_checkbox.AutoSize = true;
             this.sunday_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sunday_checkbox.ForeColor = System.Drawing.Color.White;
-            this.sunday_checkbox.Location = new System.Drawing.Point(10, 63);
+            this.sunday_checkbox.Location = new System.Drawing.Point(13, 78);
+            this.sunday_checkbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sunday_checkbox.Name = "sunday_checkbox";
-            this.sunday_checkbox.Size = new System.Drawing.Size(75, 21);
+            this.sunday_checkbox.Size = new System.Drawing.Size(86, 24);
             this.sunday_checkbox.TabIndex = 53;
             this.sunday_checkbox.Text = "Sunday";
             this.sunday_checkbox.UseVisualStyleBackColor = true;
@@ -352,9 +364,10 @@ namespace Strategy_Manager
             this.monday_checkbox.AutoSize = true;
             this.monday_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.monday_checkbox.ForeColor = System.Drawing.Color.White;
-            this.monday_checkbox.Location = new System.Drawing.Point(10, 89);
+            this.monday_checkbox.Location = new System.Drawing.Point(13, 110);
+            this.monday_checkbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.monday_checkbox.Name = "monday_checkbox";
-            this.monday_checkbox.Size = new System.Drawing.Size(77, 21);
+            this.monday_checkbox.Size = new System.Drawing.Size(89, 24);
             this.monday_checkbox.TabIndex = 54;
             this.monday_checkbox.Text = "Monday";
             this.monday_checkbox.UseVisualStyleBackColor = true;
@@ -365,9 +378,10 @@ namespace Strategy_Manager
             this.wednesday_checkbox.AutoSize = true;
             this.wednesday_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wednesday_checkbox.ForeColor = System.Drawing.Color.White;
-            this.wednesday_checkbox.Location = new System.Drawing.Point(10, 140);
+            this.wednesday_checkbox.Location = new System.Drawing.Point(13, 172);
+            this.wednesday_checkbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.wednesday_checkbox.Name = "wednesday_checkbox";
-            this.wednesday_checkbox.Size = new System.Drawing.Size(102, 21);
+            this.wednesday_checkbox.Size = new System.Drawing.Size(118, 24);
             this.wednesday_checkbox.TabIndex = 55;
             this.wednesday_checkbox.Text = "Wednesday";
             this.wednesday_checkbox.UseVisualStyleBackColor = true;
@@ -378,9 +392,10 @@ namespace Strategy_Manager
             this.tuesday_checkbox.AutoSize = true;
             this.tuesday_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tuesday_checkbox.ForeColor = System.Drawing.Color.White;
-            this.tuesday_checkbox.Location = new System.Drawing.Point(10, 115);
+            this.tuesday_checkbox.Location = new System.Drawing.Point(13, 142);
+            this.tuesday_checkbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tuesday_checkbox.Name = "tuesday_checkbox";
-            this.tuesday_checkbox.Size = new System.Drawing.Size(82, 21);
+            this.tuesday_checkbox.Size = new System.Drawing.Size(94, 24);
             this.tuesday_checkbox.TabIndex = 56;
             this.tuesday_checkbox.Text = "Tuesday";
             this.tuesday_checkbox.UseVisualStyleBackColor = true;
@@ -391,9 +406,10 @@ namespace Strategy_Manager
             this.thursday_checkbox.AutoSize = true;
             this.thursday_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thursday_checkbox.ForeColor = System.Drawing.Color.White;
-            this.thursday_checkbox.Location = new System.Drawing.Point(10, 167);
+            this.thursday_checkbox.Location = new System.Drawing.Point(13, 206);
+            this.thursday_checkbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.thursday_checkbox.Name = "thursday_checkbox";
-            this.thursday_checkbox.Size = new System.Drawing.Size(87, 21);
+            this.thursday_checkbox.Size = new System.Drawing.Size(100, 24);
             this.thursday_checkbox.TabIndex = 57;
             this.thursday_checkbox.Text = "Thursday";
             this.thursday_checkbox.UseVisualStyleBackColor = true;
@@ -404,9 +420,10 @@ namespace Strategy_Manager
             this.friday_checkbox.AutoSize = true;
             this.friday_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.friday_checkbox.ForeColor = System.Drawing.Color.White;
-            this.friday_checkbox.Location = new System.Drawing.Point(10, 193);
+            this.friday_checkbox.Location = new System.Drawing.Point(13, 238);
+            this.friday_checkbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.friday_checkbox.Name = "friday_checkbox";
-            this.friday_checkbox.Size = new System.Drawing.Size(66, 21);
+            this.friday_checkbox.Size = new System.Drawing.Size(77, 24);
             this.friday_checkbox.TabIndex = 58;
             this.friday_checkbox.Text = "Friday";
             this.friday_checkbox.UseVisualStyleBackColor = true;
@@ -417,9 +434,10 @@ namespace Strategy_Manager
             this.saturday_checkbox.AutoSize = true;
             this.saturday_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saturday_checkbox.ForeColor = System.Drawing.Color.White;
-            this.saturday_checkbox.Location = new System.Drawing.Point(10, 217);
+            this.saturday_checkbox.Location = new System.Drawing.Point(13, 267);
+            this.saturday_checkbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saturday_checkbox.Name = "saturday_checkbox";
-            this.saturday_checkbox.Size = new System.Drawing.Size(84, 21);
+            this.saturday_checkbox.Size = new System.Drawing.Size(97, 24);
             this.saturday_checkbox.TabIndex = 59;
             this.saturday_checkbox.Text = "Saturday";
             this.saturday_checkbox.UseVisualStyleBackColor = true;
@@ -430,10 +448,9 @@ namespace Strategy_Manager
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(7, 37);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(9, 46);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 17);
+            this.label8.Size = new System.Drawing.Size(48, 20);
             this.label8.TabIndex = 79;
             this.label8.Text = "Days";
             // 
@@ -442,10 +459,9 @@ namespace Strategy_Manager
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(115, 37);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(153, 46);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 17);
+            this.label9.Size = new System.Drawing.Size(46, 20);
             this.label9.TabIndex = 80;
             this.label9.Text = "Hour";
             // 
@@ -454,10 +470,9 @@ namespace Strategy_Manager
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(171, 37);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(228, 46);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(57, 17);
+            this.label10.Size = new System.Drawing.Size(68, 20);
             this.label10.TabIndex = 81;
             this.label10.Text = "Minutes";
             // 
@@ -466,18 +481,20 @@ namespace Strategy_Manager
             this.flowLayoutPanel1.Controls.Add(this.fullBackup_panel);
             this.flowLayoutPanel1.Controls.Add(this.incrementalBackup_panel);
             this.flowLayoutPanel1.Controls.Add(this.particalBackup_panel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(46, 174);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(61, 214);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(556, 379);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(741, 466);
             this.flowLayoutPanel1.TabIndex = 82;
             // 
             // fullBackup_panel
             // 
             this.fullBackup_panel.Controls.Add(this.fullArchive_checkBox);
             this.fullBackup_panel.Controls.Add(this.label1);
-            this.fullBackup_panel.Location = new System.Drawing.Point(3, 3);
+            this.fullBackup_panel.Location = new System.Drawing.Point(4, 4);
+            this.fullBackup_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fullBackup_panel.Name = "fullBackup_panel";
-            this.fullBackup_panel.Size = new System.Drawing.Size(544, 72);
+            this.fullBackup_panel.Size = new System.Drawing.Size(725, 89);
             this.fullBackup_panel.TabIndex = 0;
             this.fullBackup_panel.Visible = false;
             // 
@@ -486,9 +503,10 @@ namespace Strategy_Manager
             this.fullArchive_checkBox.AutoSize = true;
             this.fullArchive_checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fullArchive_checkBox.ForeColor = System.Drawing.Color.White;
-            this.fullArchive_checkBox.Location = new System.Drawing.Point(95, 42);
+            this.fullArchive_checkBox.Location = new System.Drawing.Point(127, 52);
+            this.fullArchive_checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fullArchive_checkBox.Name = "fullArchive_checkBox";
-            this.fullArchive_checkBox.Size = new System.Drawing.Size(82, 20);
+            this.fullArchive_checkBox.Size = new System.Drawing.Size(100, 24);
             this.fullArchive_checkBox.TabIndex = 1;
             this.fullArchive_checkBox.Text = "Archive\'s";
             this.fullArchive_checkBox.UseVisualStyleBackColor = true;
@@ -499,9 +517,10 @@ namespace Strategy_Manager
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(24, 14);
+            this.label1.Location = new System.Drawing.Point(32, 17);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 16);
+            this.label1.Size = new System.Drawing.Size(160, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Full Backup Options";
             // 
@@ -511,9 +530,10 @@ namespace Strategy_Manager
             this.incrementalBackup_panel.Controls.Add(this.label3);
             this.incrementalBackup_panel.Controls.Add(this.level0);
             this.incrementalBackup_panel.Controls.Add(this.label2);
-            this.incrementalBackup_panel.Location = new System.Drawing.Point(3, 81);
+            this.incrementalBackup_panel.Location = new System.Drawing.Point(4, 101);
+            this.incrementalBackup_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.incrementalBackup_panel.Name = "incrementalBackup_panel";
-            this.incrementalBackup_panel.Size = new System.Drawing.Size(544, 72);
+            this.incrementalBackup_panel.Size = new System.Drawing.Size(725, 89);
             this.incrementalBackup_panel.TabIndex = 1;
             this.incrementalBackup_panel.Visible = false;
             // 
@@ -522,9 +542,10 @@ namespace Strategy_Manager
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(92, 42);
+            this.label3.Location = new System.Drawing.Point(123, 52);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 16);
+            this.label3.Size = new System.Drawing.Size(54, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "Level:";
             // 
@@ -533,9 +554,10 @@ namespace Strategy_Manager
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(24, 14);
+            this.label2.Location = new System.Drawing.Point(32, 17);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(175, 16);
+            this.label2.Size = new System.Drawing.Size(220, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "lncremental Backup Options";
             // 
@@ -549,9 +571,10 @@ namespace Strategy_Manager
             this.particalBackup_panel.Controls.Add(this.tablespaces);
             this.particalBackup_panel.Controls.Add(this.picture);
             this.particalBackup_panel.Controls.Add(this.backupTablespaces);
-            this.particalBackup_panel.Location = new System.Drawing.Point(3, 159);
+            this.particalBackup_panel.Location = new System.Drawing.Point(4, 198);
+            this.particalBackup_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.particalBackup_panel.Name = "particalBackup_panel";
-            this.particalBackup_panel.Size = new System.Drawing.Size(544, 217);
+            this.particalBackup_panel.Size = new System.Drawing.Size(725, 267);
             this.particalBackup_panel.TabIndex = 2;
             this.particalBackup_panel.Visible = false;
             // 
@@ -560,9 +583,10 @@ namespace Strategy_Manager
             this.partialArchive_checkBox.AutoSize = true;
             this.partialArchive_checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.partialArchive_checkBox.ForeColor = System.Drawing.Color.White;
-            this.partialArchive_checkBox.Location = new System.Drawing.Point(95, 42);
+            this.partialArchive_checkBox.Location = new System.Drawing.Point(127, 52);
+            this.partialArchive_checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.partialArchive_checkBox.Name = "partialArchive_checkBox";
-            this.partialArchive_checkBox.Size = new System.Drawing.Size(82, 20);
+            this.partialArchive_checkBox.Size = new System.Drawing.Size(100, 24);
             this.partialArchive_checkBox.TabIndex = 1;
             this.partialArchive_checkBox.Text = "Archive\'s";
             this.partialArchive_checkBox.UseVisualStyleBackColor = true;
@@ -573,9 +597,10 @@ namespace Strategy_Manager
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(24, 14);
+            this.label4.Location = new System.Drawing.Point(32, 17);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 16);
+            this.label4.Size = new System.Drawing.Size(181, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "Partial Backup Options";
             // 
@@ -583,9 +608,10 @@ namespace Strategy_Manager
             // 
             this.flowLayoutPanel2.Controls.Add(this.panel4);
             this.flowLayoutPanel2.Controls.Add(this.panel5);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(46, 556);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(61, 429);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(556, 285);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(741, 351);
             this.flowLayoutPanel2.TabIndex = 83;
             // 
             // panel4
@@ -618,201 +644,218 @@ namespace Strategy_Manager
             this.panel4.Controls.Add(this.sunday_checkbox);
             this.panel4.Controls.Add(this.monday_checkbox);
             this.panel4.Controls.Add(this.saturday_checkbox);
-            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Location = new System.Drawing.Point(4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(267, 275);
+            this.panel4.Size = new System.Drawing.Size(356, 338);
             this.panel4.TabIndex = 0;
             // 
             // everyday_minutes
             // 
-            this.everyday_minutes.Location = new System.Drawing.Point(174, 245);
+            this.everyday_minutes.Location = new System.Drawing.Point(232, 302);
+            this.everyday_minutes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.everyday_minutes.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
             this.everyday_minutes.Name = "everyday_minutes";
-            this.everyday_minutes.Size = new System.Drawing.Size(50, 20);
+            this.everyday_minutes.Size = new System.Drawing.Size(67, 22);
             this.everyday_minutes.TabIndex = 98;
             // 
             // saturday_minutes
             // 
-            this.saturday_minutes.Location = new System.Drawing.Point(174, 219);
+            this.saturday_minutes.Location = new System.Drawing.Point(232, 270);
+            this.saturday_minutes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saturday_minutes.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
             this.saturday_minutes.Name = "saturday_minutes";
-            this.saturday_minutes.Size = new System.Drawing.Size(50, 20);
+            this.saturday_minutes.Size = new System.Drawing.Size(67, 22);
             this.saturday_minutes.TabIndex = 97;
             // 
             // friday_minutes
             // 
-            this.friday_minutes.Location = new System.Drawing.Point(174, 193);
+            this.friday_minutes.Location = new System.Drawing.Point(232, 238);
+            this.friday_minutes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.friday_minutes.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
             this.friday_minutes.Name = "friday_minutes";
-            this.friday_minutes.Size = new System.Drawing.Size(50, 20);
+            this.friday_minutes.Size = new System.Drawing.Size(67, 22);
             this.friday_minutes.TabIndex = 96;
             // 
             // thursday_minutes
             // 
-            this.thursday_minutes.Location = new System.Drawing.Point(174, 167);
+            this.thursday_minutes.Location = new System.Drawing.Point(232, 206);
+            this.thursday_minutes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.thursday_minutes.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
             this.thursday_minutes.Name = "thursday_minutes";
-            this.thursday_minutes.Size = new System.Drawing.Size(50, 20);
+            this.thursday_minutes.Size = new System.Drawing.Size(67, 22);
             this.thursday_minutes.TabIndex = 95;
             // 
             // wednesday_minutes
             // 
-            this.wednesday_minutes.Location = new System.Drawing.Point(174, 141);
+            this.wednesday_minutes.Location = new System.Drawing.Point(232, 174);
+            this.wednesday_minutes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.wednesday_minutes.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
             this.wednesday_minutes.Name = "wednesday_minutes";
-            this.wednesday_minutes.Size = new System.Drawing.Size(50, 20);
+            this.wednesday_minutes.Size = new System.Drawing.Size(67, 22);
             this.wednesday_minutes.TabIndex = 94;
             // 
             // tuesday_minutes
             // 
-            this.tuesday_minutes.Location = new System.Drawing.Point(174, 115);
+            this.tuesday_minutes.Location = new System.Drawing.Point(232, 142);
+            this.tuesday_minutes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tuesday_minutes.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
             this.tuesday_minutes.Name = "tuesday_minutes";
-            this.tuesday_minutes.Size = new System.Drawing.Size(50, 20);
+            this.tuesday_minutes.Size = new System.Drawing.Size(67, 22);
             this.tuesday_minutes.TabIndex = 93;
             // 
             // monday_minutes
             // 
-            this.monday_minutes.Location = new System.Drawing.Point(174, 89);
+            this.monday_minutes.Location = new System.Drawing.Point(232, 110);
+            this.monday_minutes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.monday_minutes.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
             this.monday_minutes.Name = "monday_minutes";
-            this.monday_minutes.Size = new System.Drawing.Size(50, 20);
+            this.monday_minutes.Size = new System.Drawing.Size(67, 22);
             this.monday_minutes.TabIndex = 92;
             // 
             // sunday_minutes
             // 
-            this.sunday_minutes.Location = new System.Drawing.Point(174, 63);
+            this.sunday_minutes.Location = new System.Drawing.Point(232, 78);
+            this.sunday_minutes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sunday_minutes.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
             this.sunday_minutes.Name = "sunday_minutes";
-            this.sunday_minutes.Size = new System.Drawing.Size(50, 20);
+            this.sunday_minutes.Size = new System.Drawing.Size(67, 22);
             this.sunday_minutes.TabIndex = 91;
             // 
             // everyday_hour
             // 
-            this.everyday_hour.Location = new System.Drawing.Point(118, 245);
+            this.everyday_hour.Location = new System.Drawing.Point(157, 302);
+            this.everyday_hour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.everyday_hour.Maximum = new decimal(new int[] {
             23,
             0,
             0,
             0});
             this.everyday_hour.Name = "everyday_hour";
-            this.everyday_hour.Size = new System.Drawing.Size(50, 20);
+            this.everyday_hour.Size = new System.Drawing.Size(67, 22);
             this.everyday_hour.TabIndex = 90;
             // 
             // monday_hour
             // 
-            this.monday_hour.Location = new System.Drawing.Point(118, 89);
+            this.monday_hour.Location = new System.Drawing.Point(157, 110);
+            this.monday_hour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.monday_hour.Maximum = new decimal(new int[] {
             23,
             0,
             0,
             0});
             this.monday_hour.Name = "monday_hour";
-            this.monday_hour.Size = new System.Drawing.Size(50, 20);
+            this.monday_hour.Size = new System.Drawing.Size(67, 22);
             this.monday_hour.TabIndex = 84;
             // 
             // saturday_hour
             // 
-            this.saturday_hour.Location = new System.Drawing.Point(118, 219);
+            this.saturday_hour.Location = new System.Drawing.Point(157, 270);
+            this.saturday_hour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saturday_hour.Maximum = new decimal(new int[] {
             23,
             0,
             0,
             0});
             this.saturday_hour.Name = "saturday_hour";
-            this.saturday_hour.Size = new System.Drawing.Size(50, 20);
+            this.saturday_hour.Size = new System.Drawing.Size(67, 22);
             this.saturday_hour.TabIndex = 89;
             // 
             // friday_hour
             // 
-            this.friday_hour.Location = new System.Drawing.Point(118, 193);
+            this.friday_hour.Location = new System.Drawing.Point(157, 238);
+            this.friday_hour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.friday_hour.Maximum = new decimal(new int[] {
             23,
             0,
             0,
             0});
             this.friday_hour.Name = "friday_hour";
-            this.friday_hour.Size = new System.Drawing.Size(50, 20);
+            this.friday_hour.Size = new System.Drawing.Size(67, 22);
             this.friday_hour.TabIndex = 88;
             // 
             // thursday_hour
             // 
-            this.thursday_hour.Location = new System.Drawing.Point(118, 167);
+            this.thursday_hour.Location = new System.Drawing.Point(157, 206);
+            this.thursday_hour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.thursday_hour.Maximum = new decimal(new int[] {
             23,
             0,
             0,
             0});
             this.thursday_hour.Name = "thursday_hour";
-            this.thursday_hour.Size = new System.Drawing.Size(50, 20);
+            this.thursday_hour.Size = new System.Drawing.Size(67, 22);
             this.thursday_hour.TabIndex = 87;
             // 
             // wednesday_hour
             // 
-            this.wednesday_hour.Location = new System.Drawing.Point(118, 141);
+            this.wednesday_hour.Location = new System.Drawing.Point(157, 174);
+            this.wednesday_hour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.wednesday_hour.Maximum = new decimal(new int[] {
             23,
             0,
             0,
             0});
             this.wednesday_hour.Name = "wednesday_hour";
-            this.wednesday_hour.Size = new System.Drawing.Size(50, 20);
+            this.wednesday_hour.Size = new System.Drawing.Size(67, 22);
             this.wednesday_hour.TabIndex = 85;
             // 
             // tuesday_hour
             // 
-            this.tuesday_hour.Location = new System.Drawing.Point(118, 115);
+            this.tuesday_hour.Location = new System.Drawing.Point(157, 142);
+            this.tuesday_hour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tuesday_hour.Maximum = new decimal(new int[] {
             23,
             0,
             0,
             0});
             this.tuesday_hour.Name = "tuesday_hour";
-            this.tuesday_hour.Size = new System.Drawing.Size(50, 20);
+            this.tuesday_hour.Size = new System.Drawing.Size(67, 22);
             this.tuesday_hour.TabIndex = 86;
             // 
             // sunday_hour
             // 
-            this.sunday_hour.Location = new System.Drawing.Point(118, 63);
+            this.sunday_hour.Location = new System.Drawing.Point(157, 78);
+            this.sunday_hour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sunday_hour.Maximum = new decimal(new int[] {
             23,
             0,
             0,
             0});
             this.sunday_hour.Name = "sunday_hour";
-            this.sunday_hour.Size = new System.Drawing.Size(50, 20);
+            this.sunday_hour.Size = new System.Drawing.Size(67, 22);
             this.sunday_hour.TabIndex = 83;
             // 
             // everyday_checkBox
@@ -820,9 +863,10 @@ namespace Strategy_Manager
             this.everyday_checkBox.AutoSize = true;
             this.everyday_checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.everyday_checkBox.ForeColor = System.Drawing.Color.White;
-            this.everyday_checkBox.Location = new System.Drawing.Point(10, 245);
+            this.everyday_checkBox.Location = new System.Drawing.Point(13, 302);
+            this.everyday_checkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.everyday_checkBox.Name = "everyday_checkBox";
-            this.everyday_checkBox.Size = new System.Drawing.Size(86, 21);
+            this.everyday_checkBox.Size = new System.Drawing.Size(99, 24);
             this.everyday_checkBox.TabIndex = 82;
             this.everyday_checkBox.Text = "Everyday";
             this.everyday_checkBox.UseVisualStyleBackColor = true;
@@ -833,9 +877,10 @@ namespace Strategy_Manager
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(24, 7);
+            this.label5.Location = new System.Drawing.Point(32, 9);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 16);
+            this.label5.Size = new System.Drawing.Size(193, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "Strategies Running Time";
             // 
@@ -845,9 +890,10 @@ namespace Strategy_Manager
             this.panel5.Controls.Add(this.medium_radioButton);
             this.panel5.Controls.Add(this.high_radioButton);
             this.panel5.Controls.Add(this.label6);
-            this.panel5.Location = new System.Drawing.Point(276, 3);
+            this.panel5.Location = new System.Drawing.Point(368, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(271, 275);
+            this.panel5.Size = new System.Drawing.Size(361, 338);
             this.panel5.TabIndex = 1;
             // 
             // low_radioButton
@@ -855,9 +901,10 @@ namespace Strategy_Manager
             this.low_radioButton.AutoSize = true;
             this.low_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.low_radioButton.ForeColor = System.Drawing.Color.White;
-            this.low_radioButton.Location = new System.Drawing.Point(60, 119);
+            this.low_radioButton.Location = new System.Drawing.Point(80, 146);
+            this.low_radioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.low_radioButton.Name = "low_radioButton";
-            this.low_radioButton.Size = new System.Drawing.Size(50, 20);
+            this.low_radioButton.Size = new System.Drawing.Size(61, 24);
             this.low_radioButton.TabIndex = 3;
             this.low_radioButton.TabStop = true;
             this.low_radioButton.Text = "Low";
@@ -868,9 +915,10 @@ namespace Strategy_Manager
             this.medium_radioButton.AutoSize = true;
             this.medium_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.medium_radioButton.ForeColor = System.Drawing.Color.White;
-            this.medium_radioButton.Location = new System.Drawing.Point(60, 93);
+            this.medium_radioButton.Location = new System.Drawing.Point(80, 114);
+            this.medium_radioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.medium_radioButton.Name = "medium_radioButton";
-            this.medium_radioButton.Size = new System.Drawing.Size(74, 20);
+            this.medium_radioButton.Size = new System.Drawing.Size(89, 24);
             this.medium_radioButton.TabIndex = 2;
             this.medium_radioButton.TabStop = true;
             this.medium_radioButton.Text = "Medium";
@@ -881,9 +929,10 @@ namespace Strategy_Manager
             this.high_radioButton.AutoSize = true;
             this.high_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.high_radioButton.ForeColor = System.Drawing.Color.White;
-            this.high_radioButton.Location = new System.Drawing.Point(60, 67);
+            this.high_radioButton.Location = new System.Drawing.Point(80, 82);
+            this.high_radioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.high_radioButton.Name = "high_radioButton";
-            this.high_radioButton.Size = new System.Drawing.Size(54, 20);
+            this.high_radioButton.Size = new System.Drawing.Size(65, 24);
             this.high_radioButton.TabIndex = 1;
             this.high_radioButton.TabStop = true;
             this.high_radioButton.Text = "High";
@@ -894,21 +943,22 @@ namespace Strategy_Manager
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(33, 37);
+            this.label6.Location = new System.Drawing.Point(44, 46);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 16);
+            this.label6.Size = new System.Drawing.Size(62, 20);
             this.label6.TabIndex = 0;
             this.label6.Text = "Priority";
             // 
             // CrearEstrategia
             // 
             this.AcceptButton = this.button1;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(710, 687);
+            this.ClientSize = new System.Drawing.Size(837, 852);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.partialBackupCB);
@@ -922,10 +972,10 @@ namespace Strategy_Manager
             this.Controls.Add(this.button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(726, 726);
+            this.MaximumSize = new System.Drawing.Size(10000, 100003);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(726, 726);
             this.Name = "CrearEstrategia";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

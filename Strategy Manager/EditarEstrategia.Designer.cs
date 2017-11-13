@@ -52,9 +52,10 @@ namespace Strategy_Manager
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 26F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.label1.Location = new System.Drawing.Point(27, 9);
+            this.label1.Location = new System.Drawing.Point(36, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 42);
+            this.label1.Size = new System.Drawing.Size(157, 52);
             this.label1.TabIndex = 0;
             this.label1.Text = "Strategy";
             this.label1.UseMnemonic = false;
@@ -64,9 +65,10 @@ namespace Strategy_Manager
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(30, 111);
+            this.label2.Location = new System.Drawing.Point(40, 137);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 20);
+            this.label2.Size = new System.Drawing.Size(112, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Connection";
             this.label2.UseMnemonic = false;
@@ -76,9 +78,10 @@ namespace Strategy_Manager
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(30, 159);
+            this.label3.Location = new System.Drawing.Point(40, 196);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 20);
+            this.label3.Size = new System.Drawing.Size(71, 25);
             this.label3.TabIndex = 0;
             this.label3.Text = "Priority";
             this.label3.UseMnemonic = false;
@@ -88,17 +91,19 @@ namespace Strategy_Manager
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label4.Location = new System.Drawing.Point(30, 65);
+            this.label4.Location = new System.Drawing.Point(40, 80);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 20);
+            this.label4.Size = new System.Drawing.Size(106, 25);
             this.label4.TabIndex = 4;
             this.label4.Text = "Strategy Id";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(214, 261);
+            this.button1.Location = new System.Drawing.Point(285, 321);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 2;
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
@@ -107,9 +112,10 @@ namespace Strategy_Manager
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(295, 261);
+            this.button2.Location = new System.Drawing.Point(393, 321);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 3;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
@@ -118,33 +124,37 @@ namespace Strategy_Manager
             // connectionTfd
             // 
             this.connectionTfd.Enabled = false;
-            this.connectionTfd.Location = new System.Drawing.Point(239, 111);
+            this.connectionTfd.Location = new System.Drawing.Point(319, 137);
+            this.connectionTfd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.connectionTfd.Name = "connectionTfd";
-            this.connectionTfd.Size = new System.Drawing.Size(100, 20);
+            this.connectionTfd.Size = new System.Drawing.Size(132, 22);
             this.connectionTfd.TabIndex = 5;
             // 
             // priorityTfd
             // 
             this.priorityTfd.Enabled = false;
-            this.priorityTfd.Location = new System.Drawing.Point(239, 159);
+            this.priorityTfd.Location = new System.Drawing.Point(319, 196);
+            this.priorityTfd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.priorityTfd.Name = "priorityTfd";
-            this.priorityTfd.Size = new System.Drawing.Size(100, 20);
+            this.priorityTfd.Size = new System.Drawing.Size(132, 22);
             this.priorityTfd.TabIndex = 8;
             // 
             // strategyIdTfd
             // 
             this.strategyIdTfd.Enabled = false;
-            this.strategyIdTfd.Location = new System.Drawing.Point(239, 65);
+            this.strategyIdTfd.Location = new System.Drawing.Point(319, 80);
+            this.strategyIdTfd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.strategyIdTfd.Name = "strategyIdTfd";
-            this.strategyIdTfd.Size = new System.Drawing.Size(100, 20);
+            this.strategyIdTfd.Size = new System.Drawing.Size(132, 22);
             this.strategyIdTfd.TabIndex = 4;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(239, 210);
+            this.checkBox1.Location = new System.Drawing.Point(319, 258);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.Size = new System.Drawing.Size(18, 17);
             this.checkBox1.TabIndex = 10;
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
@@ -153,20 +163,21 @@ namespace Strategy_Manager
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.Control;
-            this.label11.Location = new System.Drawing.Point(30, 204);
+            this.label11.Location = new System.Drawing.Point(40, 251);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(118, 20);
+            this.label11.Size = new System.Drawing.Size(180, 25);
             this.label11.TabIndex = 11;
-            this.label11.Text = "Active/Deactive";
+            this.label11.Text = "Activate/Deactivate";
             // 
             // EditarEstrategia
             // 
             this.AcceptButton = this.button1;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(382, 311);
+            this.ClientSize = new System.Drawing.Size(507, 383);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -180,14 +191,15 @@ namespace Strategy_Manager
             this.Controls.Add(this.priorityTfd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(398, 444);
+            this.MaximumSize = new System.Drawing.Size(525, 536);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(398, 350);
+            this.MinimumSize = new System.Drawing.Size(525, 420);
             this.Name = "EditarEstrategia";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Edit Estrategia";
+            this.Text = "Edit Strategy";
             this.ResumeLayout(false);
             this.PerformLayout();
 
