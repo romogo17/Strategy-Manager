@@ -1195,7 +1195,7 @@ namespace Strategy_Manager
             if (backupTablespaces.SelectedItem != null)
             {
                 tablespaces.Items.Add(backupTablespaces.SelectedItem);   
-                backupScript.Remove("backup tablespace " + tablespaces.SelectedItem.ToString().ToLower() + ";");
+                backupScript.Remove("backup tablespace " + backupTablespaces.SelectedItem.ToString().ToLower() + ";");
                 backupTablespaces.Items.Remove(backupTablespaces.SelectedItem);
             }
         }
